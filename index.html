@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PDF Viewer</title>
+<style>
+  body{margin:0;font-family:Arial,sans-serif;height:100vh}
+  .wrap{display:flex;height:100vh}
+  .left{width:380px;border-right:1px solid #ddd;padding:12px;box-sizing:border-box;overflow:auto}
+  .right{flex:1;display:flex;flex-direction:column}
+  input{width:100%;padding:10px;font-size:14px;box-sizing:border-box}
+  table{width:100%;border-collapse:collapse;margin-top:10px}
+  td{padding:8px 6px;border-bottom:1px solid #eee;font-size:14px}
+  tr:hover{background:#f6f6f6;cursor:pointer}
+  .topbar{padding:10px 12px;border-bottom:1px solid #ddd;display:flex;gap:10px;align-items:center}
+  .filename{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .btn{padding:8px 10px;border:1px solid #ddd;background:#fff;cursor:pointer}
+  iframe{width:100%;flex:1;border:0}
+  .hint,.status{color:#666;font-size:12px;margin-top:8px;line-height:1.4}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="left">
+    <div style="font-weight:700;font-size:16px;">Daftar PDF</div>
+    <div class="hint">Ketik untuk cari. Klik judul untuk buka viewer.</div>
+    <div class="status" id="status">Memuat daftar PDF...</div>
+    <input id="q" placeholder="Cari nama file..." disabled/>
+    <table id="tbl"></table>
+  </div>
+
+  <div class="right">
+    <div class="topbar">
+      <div class="filename" id="currentName">Pilih file di kiri</div>
+      <button class="btn" id="openNew" disabled>Buka di tab baru</button>
+      <button class="btn" id="reload">Muat ulang</button>
+    </div>
+    <iframe id="viewer" src="about:blank"></iframe>
+  </div>
+</div>
+
+<script>
+const FEED_BASE_URL = "https://script.google.com/macros/s/AKfycbyhsnbJCyackspZWJY9JGMWW728d-I5ndN6K64kmcBX_DPKleAqI3yswc07_Ikf6zLm/exec";
+
+let data = [];
+let current = null;
+
+const q = document.getElementById('q');
+const tbl = document.getElementById('tbl');
+const viewer = document.getElementById('viewer');
+const currentName = document.getElementById('currentName');
+const openNew = document.getElementById('openNew');
+const statusEl = document.getElementById('status');
+const reloadBtn = document.getElementById('reload');
+
+function render(list){
+  tbl.innerHTML='';
+  list.forEach((item)=>{
+    const tr=document.createElement('tr');
+    const td=document.createElement('td');
+    td.textContent=item.title;
+    tr.appendChild(td);
+    tr.addEventListener('click',()=>select(item));
+    tbl.appendChild(tr);
+  });
+}
+
+function select(item){
+  current=item;
+  currentName.textContent=item.title;
+  viewer.src=item.previewUrl;
+  openNew.disabled=false;
+}
+
+openNew.addEventListener('click',()=>{
+  if(!current) return;
+  window.open(current.viewUrl,'_blank');
+});
+
+q.addEventListener('input',()=>{
+  const s=q.value.trim().toLowerCase();
+  if(!s) return render(data);
+  render(data.filter(x=>String(x.title||'').toLowerCase().includes(s)));
+});
+
+reloadBtn.addEventListener('click',()=>loadData(true));
+
+function setStatus(msg){statusEl.textContent=msg;}
+
+function loadData(forceReload){
+  setStatus('Memuat daftar PDF...');
+  q.disabled=true;
+
+  const cbName="onPdfList_"+Date.now();
+  window[cbName]=function(list){
+    try{
+      data=Array.isArray(list)?list:[];
+      render(data);
+      q.disabled=false;
+      setStatus('Total: '+data.length+' file');
+    }finally{
+      delete window[cbName];
+      script.remove();
+    }
+  };
+
+  const base=FEED_BASE_URL.replace(/\/$/,'');
+  const url=base+"?format=jsonp&callback="+encodeURIComponent(cbName)+(forceReload?"&t="+Date.now():"");
+  const script=document.createElement('script');
+  script.src=url;
+  script.onerror=function(){
+    setStatus('Gagal memuat. Cek akses Apps Script dan folder PDF.');
+    q.disabled=true;
+  };
+  document.head.appendChild(script);
+}
+
+loadData(false);
+</script>
+</body>
+</html>
