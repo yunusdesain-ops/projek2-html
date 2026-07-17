@@ -1,122 +1,500 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PDF Viewer</title>
-<style>
-  body{margin:0;font-family:Arial,sans-serif;height:100vh}
-  .wrap{display:flex;height:100vh}
-  .left{width:380px;border-right:1px solid #ddd;padding:12px;box-sizing:border-box;overflow:auto}
-  .right{flex:1;display:flex;flex-direction:column}
-  input{width:100%;padding:10px;font-size:14px;box-sizing:border-box}
-  table{width:100%;border-collapse:collapse;margin-top:10px}
-  td{padding:8px 6px;border-bottom:1px solid #eee;font-size:14px}
-  tr:hover{background:#f6f6f6;cursor:pointer}
-  .topbar{padding:10px 12px;border-bottom:1px solid #ddd;display:flex;gap:10px;align-items:center}
-  .filename{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .btn{padding:8px 10px;border:1px solid #ddd;background:#fff;cursor:pointer}
-  iframe{width:100%;flex:1;border:0}
-  .hint,.status{color:#666;font-size:12px;margin-top:8px;line-height:1.4}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Stok Akun Premium</title>
+    <style>
+        /* Desain Dasar & Warna */
+        :root {
+            --primary: #4F46E5;
+            --primary-hover: #4338CA;
+            --danger: #EF4444;
+            --danger-hover: #DC2626;
+            --success: #10B981;
+            --bg: #F3F4F6;
+            --card: #FFFFFF;
+            --text: #1F2937;
+            --text-light: #6B7280;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #E0E7FF 0%, #F3F4F6 100%);
+            color: var(--text);
+            margin: 0;
+            padding: 20px 15px 60px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* Kartu (Card) Modern */
+        .card {
+            background: var(--card);
+            padding: 24px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            animation: slideUp 0.5s ease backwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 18px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Form & Input */
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 12px;
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 15px;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+            background: #FFF;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+            line-height: 1.5;
+        }
+
+        /* Tombol (Button) */
+        button {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        button:active {
+            transform: scale(0.97);
+            background: var(--primary-hover);
+        }
+
+        .btn-danger { background: var(--danger); }
+        .btn-danger:active { background: var(--danger-hover); }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-small {
+            padding: 8px 12px;
+            font-size: 13px;
+            border-radius: 8px;
+            width: auto;
+        }
+
+        .btn-jumlah {
+            background: #E0E7FF;
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            width: auto;
+            border: 1px solid #C7D2FE;
+        }
+
+        .btn-jumlah:active {
+            background: #C7D2FE;
+        }
+
+        /* Riwayat Item */
+        .riwayat-item {
+            background: #F9FAFB;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #F3F4F6;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .riwayat-detail {
+            display: none;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed #D1D5DB;
+            animation: slideDown 0.3s ease;
+        }
+
+        .riwayat-nomor {
+            color: var(--text-light);
+            font-size: 14px;
+            font-family: monospace;
+            background: #E5E7EB;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 0 0 10px 0;
+            word-break: break-all;
+            white-space: pre-wrap;
+        }
+
+        /* Output Sukses */
+        #output-container {
+            display: none;
+            background: #ECFDF5;
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 15px;
+            border: 1px solid #A7F3D0;
+            animation: slideDown 0.3s ease;
+        }
+
+        /* Toast Notifikasi */
+        #toast-container {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            pointer-events: none;
+        }
+
+        .toast {
+            background: #333;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: toastIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+        .toast.success { background: var(--success); }
+        .toast.error { background: var(--danger); }
+        .toast.fade-out { animation: toastOut 0.3s ease forwards; }
+
+        /* Dashboard Stats */
+        .stats-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+        .stat-box {
+            flex: 1;
+        }
+        .stat-divider {
+            width: 1px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 0 15px;
+        }
+
+        /* Animasi Keyframes */
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        @keyframes toastIn { from { opacity: 0; transform: translateY(-20px) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes toastOut { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(-20px) scale(0.9); } }
+        
+        .pulse-text { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+    </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="left">
-    <div style="font-weight:700;font-size:16px;">Daftar PDF</div>
-    <div class="hint">Ketik untuk cari. Klik judul untuk buka viewer.</div>
-    <div class="status" id="status">Memuat daftar PDF...</div>
-    <input id="q" placeholder="Cari nama file..." disabled/>
-    <table id="tbl"></table>
-  </div>
 
-  <div class="right">
-    <div class="topbar">
-      <div class="filename" id="currentName">Pilih file di kiri</div>
-      <button class="btn" id="openNew" disabled>Buka di tab baru</button>
-      <button class="btn" id="reload">Muat ulang</button>
+<div id="toast-container"></div>
+
+<div class="container">
+    
+    <div class="card" style="background: linear-gradient(135deg, var(--primary) 0%, #6366F1 100%); color: white; padding: 24px 15px;">
+        <div class="stats-container">
+            <div class="stat-box">
+                <p style="margin: 0; opacity: 0.9; font-size: 13px; font-weight: 600;">SISA STOK</p>
+                <h2 style="margin: 5px 0 0; font-size: 38px;" class="pulse-text" id="info-stok">0</h2>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-box">
+                <p style="margin: 0; opacity: 0.9; font-size: 13px; font-weight: 600;">TOTAL TERJUAL</p>
+                <h2 style="margin: 5px 0 0; font-size: 38px;" id="info-terjual">0</h2>
+            </div>
+        </div>
     </div>
-    <iframe id="viewer" src="about:blank"></iframe>
-  </div>
+
+    <div class="card">
+        <h3>
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"></path></svg>
+            Tambah Stok Baru
+        </h3>
+        <textarea id="input-stok" placeholder="Paste nomor HP di sini...&#10;(Otomatis memisahkan nomor)"></textarea>
+        <button onclick="tambahStok()">Simpan ke Stok</button>
+    </div>
+
+    <div class="card">
+        <h3>
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            Jual & Ambil Akun
+        </h3>
+        <input type="text" id="input-pembeli" placeholder="Nama Pembeli (Opsional)">
+        <input type="number" id="input-jumlah" placeholder="Jumlah Akun (misal: 10)">
+        <button onclick="jualAkun()">Proses Penjualan</button>
+
+        <div id="output-container">
+            <h4 style="margin-top:0; margin-bottom: 10px; color: var(--success); display: flex; align-items: center; gap: 5px;">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+                Berhasil Diambil!
+            </h4>
+            <textarea id="output-nomor" readonly style="min-height: 120px; background: #fff; border-color: #A7F3D0;"></textarea>
+            <button class="btn-outline" onclick="copyOutput()">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                Copy Semua Nomor
+            </button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Riwayat Terbaru
+        </h3>
+        <div id="list-riwayat">
+            </div>
+    </div>
+
+    <div class="card" style="background: transparent; box-shadow: none; padding: 0;">
+        <button class="btn-danger" onclick="resetStok()">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+            Reset Semua Data
+        </button>
+    </div>
 </div>
 
 <script>
-const FEED_BASE_URL = "https://script.google.com/macros/s/AKfycbyhsnbJCyackspZWJY9JGMWW728d-I5ndN6K64kmcBX_DPKleAqI3yswc07_Ikf6zLm/exec";
+    // Inisialisasi Data dari LocalStorage
+    let stok = JSON.parse(localStorage.getItem('premium_stok')) || [];
+    let riwayat = JSON.parse(localStorage.getItem('premium_riwayat')) || [];
 
-let data = [];
-let current = null;
+    // Fungsi Notifikasi Cantik (Toast)
+    function showToast(message, type = 'success') {
+        const container = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerText = message;
+        container.appendChild(toast);
 
-const q = document.getElementById('q');
-const tbl = document.getElementById('tbl');
-const viewer = document.getElementById('viewer');
-const currentName = document.getElementById('currentName');
-const openNew = document.getElementById('openNew');
-const statusEl = document.getElementById('status');
-const reloadBtn = document.getElementById('reload');
-
-function render(list){
-  tbl.innerHTML='';
-  list.forEach((item)=>{
-    const tr=document.createElement('tr');
-    const td=document.createElement('td');
-    td.textContent=item.title;
-    tr.appendChild(td);
-    tr.addEventListener('click',()=>select(item));
-    tbl.appendChild(tr);
-  });
-}
-
-function select(item){
-  current=item;
-  currentName.textContent=item.title;
-  viewer.src=item.previewUrl;
-  openNew.disabled=false;
-}
-
-openNew.addEventListener('click',()=>{
-  if(!current) return;
-  window.open(current.viewUrl,'_blank');
-});
-
-q.addEventListener('input',()=>{
-  const s=q.value.trim().toLowerCase();
-  if(!s) return render(data);
-  render(data.filter(x=>String(x.title||'').toLowerCase().includes(s)));
-});
-
-reloadBtn.addEventListener('click',()=>loadData(true));
-
-function setStatus(msg){statusEl.textContent=msg;}
-
-function loadData(forceReload){
-  setStatus('Memuat daftar PDF...');
-  q.disabled=true;
-
-  const cbName="onPdfList_"+Date.now();
-  window[cbName]=function(list){
-    try{
-      data=Array.isArray(list)?list:[];
-      render(data);
-      q.disabled=false;
-      setStatus('Total: '+data.length+' file');
-    }finally{
-      delete window[cbName];
-      script.remove();
+        setTimeout(() => {
+            toast.classList.add('fade-out');
+            setTimeout(() => toast.remove(), 300);
+        }, 3000);
     }
-  };
 
-  const base=FEED_BASE_URL.replace(/\/$/,'');
-  const url=base+"?format=jsonp&callback="+encodeURIComponent(cbName)+(forceReload?"&t="+Date.now():"");
-  const script=document.createElement('script');
-  script.src=url;
-  script.onerror=function(){
-    setStatus('Gagal memuat. Cek akses Apps Script dan folder PDF.');
-    q.disabled=true;
-  };
-  document.head.appendChild(script);
-}
+    // Fungsi Format Waktu (Jam:Menit)
+    function getWaktuSekarang() {
+        const now = new Date();
+        const jam = String(now.getHours()).padStart(2, '0');
+        const menit = String(now.getMinutes()).padStart(2, '0');
+        return `${jam}:${menit}`;
+    }
 
-loadData(false);
+    // Fungsi Update Tampilan
+    function updateUI() {
+        // Update Sisa Stok
+        document.getElementById('info-stok').innerText = stok.length;
+        
+        // Update Total Terjual
+        let totalTerjual = 0;
+        riwayat.forEach(item => {
+            totalTerjual += item.jumlah;
+        });
+        document.getElementById('info-terjual').innerText = totalTerjual;
+
+        // Render Riwayat
+        const list = document.getElementById('list-riwayat');
+        list.innerHTML = '';
+        
+        if (riwayat.length === 0) {
+            list.innerHTML = '<p style="color: var(--text-light); text-align:center; padding: 20px 0;">Belum ada penjualan</p>';
+        } else {
+            // Tampilkan dari yang paling baru
+            [...riwayat].reverse().forEach(item => {
+                list.innerHTML += `
+                    <div class="riwayat-item">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <p style="font-weight: 600; margin: 0; font-size: 15px;">${item.pembeli}</p>
+                                <p style="font-size: 12px; color: var(--text-light); margin: 4px 0 0;">Jam Pembelian: ${item.waktu || '-'}</p>
+                            </div>
+                            <button class="btn-jumlah" onclick="toggleDetail(${item.id})">
+                                ${item.jumlah} Akun ▾
+                            </button>
+                        </div>
+                        
+                        <div id="detail-${item.id}" class="riwayat-detail">
+                            <p style="font-size: 13px; font-weight: bold; margin: 0 0 8px 0; color: var(--text);">Detail Nomor:</p>
+                            <p class="riwayat-nomor">${item.nomor.join('\n')}</p>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="btn-outline btn-small" style="flex: 1;" onclick="copyDetail(this, '${item.nomor.join('\\n')}')">Copy Nomor</button>
+                                <button class="btn-danger btn-small" style="flex: 1;" onclick="batalJual(${item.id})">Batal Jual</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+        
+        // Simpan setiap kali ada perubahan
+        localStorage.setItem('premium_stok', JSON.stringify(stok));
+        localStorage.setItem('premium_riwayat', JSON.stringify(riwayat));
+    }
+
+    // Fungsi Buka/Tutup Detail
+    function toggleDetail(id) {
+        const detailBox = document.getElementById(`detail-${id}`);
+        if (detailBox.style.display === 'block') {
+            detailBox.style.display = 'none';
+        } else {
+            detailBox.style.display = 'block';
+        }
+    }
+
+    // Fungsi Copy Khusus di Riwayat
+    function copyDetail(btnElement, teks) {
+        navigator.clipboard.writeText(teks).then(() => {
+            const teksAsli = btnElement.innerText;
+            btnElement.innerText = "Dicopy!";
+            showToast('Nomor di riwayat berhasil dicopy!');
+            setTimeout(() => {
+                btnElement.innerText = teksAsli;
+            }, 2000);
+        }).catch(err => {
+            showToast('Gagal mengcopy nomor', 'error');
+        });
+    }
+
+    // Fungsi Tambah Stok
+    function tambahStok() {
+        const input = document.getElementById('input-stok').value;
+        if (!input.trim()) return showToast('Nomor masih kosong!', 'error');
+
+        // Pisahkan & bersihkan nomor
+        const nomorBaru = input.split(/[\n,]+/).map(n => n.replace(/\D/g, '')).filter(n => n.length > 5);
+        
+        if (nomorBaru.length === 0) return showToast('Tidak ada nomor yang valid', 'error');
+
+        stok = stok.concat(nomorBaru);
+        document.getElementById('input-stok').value = '';
+        updateUI();
+        showToast(`Berhasil menambah ${nomorBaru.length} nomor ke stok`);
+    }
+
+    // Fungsi Jual Akun
+    function jualAkun() {
+        const pembeli = document.getElementById('input-pembeli').value || 'Anonim';
+        const jumlah = parseInt(document.getElementById('input-jumlah').value);
+
+        if (!jumlah || jumlah <= 0) return showToast('Masukkan jumlah yang benar', 'error');
+        if (jumlah > stok.length) return showToast(`Stok kurang! Sisa: ${stok.length}`, 'error');
+
+        // Ambil nomor dari awal array stok
+        const nomorDiambil = stok.splice(0, jumlah);
+
+        // Catat ke riwayat
+        riwayat.push({
+            id: Date.now(),
+            pembeli: pembeli,
+            jumlah: jumlah,
+            waktu: getWaktuSekarang(),
+            nomor: nomorDiambil
+        });
+
+        // Tampilkan output
+        const outputContainer = document.getElementById('output-container');
+        const outputNomor = document.getElementById('output-nomor');
+        
+        outputNomor.value = nomorDiambil.join('\n');
+        outputContainer.style.display = 'block';
+
+        // Reset input form
+        document.getElementById('input-pembeli').value = '';
+        document.getElementById('input-jumlah').value = '';
+
+        updateUI();
+        showToast('Penjualan diproses!');
+    }
+
+    // Fungsi Copy Output Baru Terjual
+    function copyOutput() {
+        const teks = document.getElementById('output-nomor');
+        teks.select();
+        document.execCommand('copy');
+        showToast('Nomor berhasil dicopy!');
+    }
+
+    // Fungsi Batal Jual
+    function batalJual(id) {
+        if (!confirm('Yakin ingin membatalkan penjualan ini? Nomor akan kembali ke stok.')) return;
+
+        const index = riwayat.findIndex(r => r.id === id);
+        if (index !== -1) {
+            const dataBatal = riwayat[index];
+            // Masukkan kembali nomor ke stok
+            stok = stok.concat(dataBatal.nomor);
+            // Hapus dari riwayat
+            riwayat.splice(index, 1);
+            
+            updateUI();
+            showToast('Penjualan dibatalkan, stok kembali utuh.');
+        }
+    }
+
+    // Fungsi Reset Stok
+    function resetStok() {
+        if (confirm('Yakin ingin menghapus SEMUA stok dan riwayat? Data tidak bisa dikembalikan.')) {
+            stok = [];
+            riwayat = [];
+            document.getElementById('output-container').style.display = 'none';
+            updateUI();
+            showToast('Semua data berhasil direset');
+        }
+    }
+
+    // Jalankan saat pertama kali dibuka
+    updateUI();
 </script>
+
 </body>
 </html>
