@@ -111,15 +111,24 @@
         .btn-danger { background: var(--danger); }
         .btn-danger:active { background: var(--danger-hover); }
         
+        .btn-success { background: var(--success); }
+        .btn-success:active { background: #059669; }
+        
         .btn-outline {
             background: transparent;
             color: var(--primary);
-            border: 2px solid var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-outline-success {
+            background: transparent;
+            color: var(--success);
+            border: 1px solid var(--success);
         }
 
         .btn-small {
-            padding: 8px 12px;
-            font-size: 13px;
+            padding: 8px;
+            font-size: 12px;
             border-radius: 8px;
             width: auto;
         }
@@ -147,6 +156,32 @@
             margin-bottom: 12px;
             border: 1px solid #F3F4F6;
             animation: fadeIn 0.4s ease;
+            transition: all 0.3s ease;
+        }
+
+        /* Warna Riwayat Lunas */
+        .riwayat-item.lunas {
+            background: #ECFDF5;
+            border-color: #A7F3D0;
+        }
+
+        .badge-status {
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .status-belum {
+            background: #FEE2E2;
+            color: var(--danger);
+        }
+
+        .status-lunas {
+            background: #D1FAE5;
+            color: var(--success);
         }
 
         .riwayat-detail {
@@ -167,6 +202,10 @@
             margin: 0 0 10px 0;
             word-break: break-all;
             white-space: pre-wrap;
+        }
+        
+        .riwayat-item.lunas .riwayat-nomor {
+            background: #ffffff;
         }
 
         /* Output Sukses */
@@ -406,11 +445,22 @@
             list.innerHTML = '<p style="color: var(--text-light); text-align:center; padding: 20px 0;">Belum ada penjualan</p>';
         } else {
             [...riwayat].reverse().forEach(item => {
+                // Konfigurasi Status Lunas
+                const isLunas = item.lunas === true; // Handle data lama yg belum ada properti lunas
+                const statusBadge = isLunas 
+                    ? '<span class="badge-status status-lunas">LUNAS</span>' 
+                    : '<span class="badge-status status-belum">BELUM BAYAR</span>';
+                const cardClass = isLunas ? 'riwayat-item lunas' : 'riwayat-item';
+                const btnLunasText = isLunas ? 'Batalkan Lunas' : 'Tandai Lunas';
+                const btnLunasClass = isLunas ? 'btn-outline-success btn-small' : 'btn-success btn-small';
+
                 list.innerHTML += `
-                    <div class="riwayat-item">
+                    <div class="${cardClass}">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div>
-                                <p style="font-weight: 600; margin: 0; font-size: 15px;">${item.pembeli}</p>
+                                <p style="font-weight: 600; margin: 0; font-size: 15px; display: flex; align-items: center;">
+                                    ${item.pembeli} ${statusBadge}
+                                </p>
                                 <p style="font-size: 12px; color: var(--text-light); margin: 4px 0 0;">Jam Pembelian: ${item.waktu || '-'}</p>
                             </div>
                             <button class="btn-jumlah" onclick="window.toggleDetail(${item.id})">
@@ -421,9 +471,12 @@
                         <div id="detail-${item.id}" class="riwayat-detail">
                             <p style="font-size: 13px; font-weight: bold; margin: 0 0 8px 0; color: var(--text);">Detail Nomor:</p>
                             <p class="riwayat-nomor">${item.nomor.join('\n')}</p>
+                            
+                            <!-- Area Tombol Aksi 3 Kolom -->
                             <div style="display: flex; gap: 8px;">
-                                <button class="btn-outline btn-small" style="flex: 1;" onclick="window.copyDetail(this, '${item.nomor.join('\\n')}')">Copy Nomor</button>
-                                <button class="btn-danger btn-small" style="flex: 1;" onclick="window.batalJual(${item.id})">Batal Jual</button>
+                                <button class="${btnLunasClass}" style="flex: 1;" onclick="window.toggleLunas(${item.id})">${btnLunasText}</button>
+                                <button class="btn-outline btn-small" style="flex: 1;" onclick="window.copyDetail(this, '${item.nomor.join('\\n')}')">Copy</button>
+                                <button class="btn-danger btn-small" style="flex: 1;" onclick="window.batalJual(${item.id})">Batal</button>
                             </div>
                         </div>
                     </div>
@@ -439,6 +492,18 @@
             detailBox.style.display = 'none';
         } else {
             detailBox.style.display = 'block';
+        }
+    }
+
+    // Fungsi Toggle Status Lunas
+    window.toggleLunas = function(id) {
+        const index = riwayat.findIndex(r => r.id === id);
+        if (index !== -1) {
+            // Ubah status (jika belum ada, set jadi true)
+            riwayat[index].lunas = !riwayat[index].lunas;
+            
+            simpanKeFirebase(); // Sinkronisasi
+            window.showToast(riwayat[index].lunas ? 'Pembayaran Ditandai Lunas!' : 'Status Lunas Dibatalkan', 'success');
         }
     }
 
@@ -487,7 +552,8 @@
             pembeli: pembeli,
             jumlah: jumlah,
             waktu: getWaktuSekarang(),
-            nomor: nomorDiambil
+            nomor: nomorDiambil,
+            lunas: false // Default belum bayar saat dijual
         });
 
         const outputContainer = document.getElementById('output-container');
