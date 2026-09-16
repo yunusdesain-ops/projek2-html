@@ -16,9 +16,23 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 9px;
 .small{font-size:12px;color:#64748b}.status{font-weight:700}.warning-row{background:#fff7ed}.done-row{background:#cfe8d3}.complete-cell{text-align:center;width:90px}.check-wrap{display:flex;justify-content:center;align-items:center}.check-wrap input{width:20px;height:20px;cursor:pointer;accent-color:#16a34a}.warning-text{display:inline-block;margin-left:6px;font-size:12px;font-weight:700;color:#b45309}.nowrap{white-space:nowrap}.actions{display:flex;gap:6px;flex-wrap:wrap}.bjm-cell{display:flex;align-items:center;gap:6px;white-space:nowrap}.click-copy-bjm{cursor:pointer;font-weight:600}.click-copy-bjm:hover{text-decoration:underline}.click-copy-bjm.copied{color:#166534}.copy-check{display:inline-block;margin-left:5px;color:#16a34a;font-weight:800}
 .toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.toolbar input{padding:9px;border:1px solid #d1d5db;border-radius:8px}
 .notice{padding:12px;border-radius:10px;background:#eff6ff;color:#1e40af;margin-top:12px}.warn{background:#fff7ed;color:#9a3412}.attachment-box{padding:12px;border:1px solid #dbeafe;border-radius:10px;background:#f8fbff}.attachment-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin-top:10px}.attachment-item{padding:10px;background:#fff;border:1px solid #e5e7eb;border-radius:8px}.attachment-count{font-weight:800;font-size:18px}.attachment-detail{margin-top:12px;overflow:auto}.attachment-detail table{font-size:13px}
+
+.date-picker-wrap{position:relative;width:42px;height:42px}.sr-date-input{position:absolute;inset:0;width:42px;height:42px;margin:0;padding:0;opacity:0;cursor:pointer;z-index:3;border:0}.icon-date-btn{position:absolute;inset:0;z-index:2;width:42px;height:42px;padding:0;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#1e3a8a;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.icon-date-btn{width:42px;height:42px;padding:0;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#1e3a8a;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.icon-date-btn:hover{background:#eff6ff;border-color:#93c5fd}
+.icon-date-btn:active{transform:scale(.97)}
 @media(max-width:1100px){.grid{grid-template-columns:1fr}table{font-size:13px}th,td{padding:9px 7px}}
 .app-shell{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:start}.sidebar{background:#fff;border-radius:14px;padding:12px;box-shadow:0 3px 14px #0000000d;position:sticky;top:18px}.side-title{font-weight:800;color:#64748b;padding:10px 12px}.tab-btn{width:100%;text-align:left;border:0;background:transparent;color:#111827;padding:12px;border-radius:9px;cursor:pointer;margin:3px 0}.tab-btn.active{background:#111827;color:#fff}.tab-page{display:none}.tab-page.active{display:block}.date-item{display:flex;justify-content:space-between;align-items:center;padding:11px 13px;border-radius:9px;background:#f8fafc;margin:6px 0;cursor:pointer}.date-item.active{background:#111827;color:#fff}.date-count{font-size:12px;background:#e5e7eb;padding:3px 7px;border-radius:999px}.date-item.active .date-count{background:#ffffff33;color:#fff}@media(max-width:900px){.app-shell{grid-template-columns:1fr}.sidebar{position:static;display:flex;gap:5px;overflow:auto}.side-title{display:none}.tab-btn{width:auto;white-space:nowrap}}
 .live-sync{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:6px 10px;border-radius:999px;background:#ecfdf5;color:#166534;font-size:12px;font-weight:700}.live-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px #bbf7d0}.live-sync.off{background:#f3f4f6;color:#4b5563}.live-sync.off .live-dot{background:#9ca3af;box-shadow:none}.live-sync.err{background:#fef2f2;color:#991b1b}.live-sync.err .live-dot{background:#ef4444;box-shadow:0 0 0 3px #fecaca}
+
+/* Final date picker: the calendar icon is the clickable date input itself. */
+.date-picker-wrap{position:relative;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#1e3a8a;overflow:hidden;cursor:pointer}
+.date-picker-wrap:hover{background:#eff6ff;border-color:#93c5fd}
+.date-icon{position:absolute;z-index:1;pointer-events:none}
+.monitor-date-input{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;opacity:0;cursor:pointer;border:0;z-index:2}
+.monitor-date-input::-webkit-calendar-picker-indicator{cursor:pointer;width:100%;height:100%;position:absolute;left:0;top:0}
+ .date-control{display:flex;align-items:center;gap:6px}.date-control input{height:40px;width:165px;margin:0;padding:8px 10px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;cursor:pointer;font:inherit}.date-control input:focus{outline:2px solid #bfdbfe;outline-offset:1px;border-color:#60a5fa}.date-open-btn{width:40px;height:40px;padding:0;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#1e3a8a;display:flex;align-items:center;justify-content:center;cursor:pointer}.date-open-btn:hover{background:#eff6ff}.date-open-btn:active{transform:scale(.97)}
+.date-picker-shell{position:relative;width:165px;height:40px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:0 10px;color:#0f172a}.date-picker-shell:hover{border-color:#94a3b8}.date-picker-shell:focus-within{outline:2px solid #bfdbfe;outline-offset:1px;border-color:#60a5fa}.date-picker-shell .date-display{font-size:13px;font-weight:700;white-space:nowrap;color:#475569}.date-picker-shell.has-value .date-display{color:#0f172a}.date-picker-shell .date-icon{font-size:14px;color:#475569;line-height:1}.date-picker-shell input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:2;border:0;margin:0;padding:0}
 </style>
 
 <style id="premium-ui">
@@ -90,10 +104,88 @@ td{border-bottom:1px solid #eef2f7}
 @media(max-width:1150px){.premium-overview{grid-template-columns:1fr 1fr}.overview-main{grid-column:1/-1}}
 @media(max-width:900px){main{padding:18px 14px 30px}.app-shell{grid-template-columns:1fr}.premium-overview{grid-template-columns:1fr 1fr}.overview-main{grid-column:1/-1}}
 @media(max-width:620px){.premium-overview{grid-template-columns:1fr}.overview-main{grid-column:auto}.action-panel .field{min-width:100%}}
+
+.premium-overview-compact{grid-template-columns:1.6fr repeat(3,1fr)}
+.monitor-date-panel{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.monitor-date-copy{min-width:220px}.monitor-date-title{font-size:14px;font-weight:800;color:#0f172a;margin-bottom:4px}
+.monitor-date-actions{display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap}
+.monitor-date-field{display:flex;flex-direction:column;gap:6px;min-width:200px}.monitor-date-field span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#64748b;font-weight:800}
+.monitor-date-field input{height:40px;margin:0;padding:9px 11px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;cursor:pointer;box-shadow:inset 0 1px 2px rgba(15,23,42,.03)}
+.monitor-date-field input:focus{outline:2px solid #bfdbfe;outline-offset:1px;border-color:#60a5fa}
+.monitor-date-active{background:#eff6ff;border-color:#bfdbfe}
+@media(max-width:900px){.premium-overview-compact{grid-template-columns:1fr 1fr}.monitor-date-actions{width:100%}.monitor-date-field{flex:1}}
+
 /* fokus aplikasi monitoring, halaman TAT lama disembunyikan dari navigasi tanpa menghapus data/logic */
 #tatPage{display:none!important}
 </style>
 
+
+<style id="icon-only-date-style">
+.date-hidden-native{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important;border:0!important;padding:0!important;margin:0!important}
+.date-icon-only{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #cbd5e1;border-radius:11px;background:#fff;color:#1e3a8a;cursor:pointer;padding:0;box-shadow:0 1px 2px rgba(15,23,42,.04);font-size:16px;line-height:1;transition:.15s ease}
+.date-icon-only:hover{background:#eff6ff;border-color:#93c5fd;transform:translateY(-1px)}
+.date-icon-only:active{transform:translateY(0) scale(.97)}
+.date-field-compact{display:flex;align-items:flex-end;gap:7px}
+.date-caption{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#64748b;font-weight:800;margin-bottom:6px}
+.date-field-compact .date-caption{align-self:center;margin:0}
+</style>
+<script>
+(function(){
+  const map={
+    monitorDate:{trigger:'monitorDateTrigger'},
+    setBatchSent:{trigger:'setBatchSentTrigger'},
+    setBatchReceived:{trigger:'setBatchReceivedTrigger'}
+  };
+  function openFor(id){
+    const el=document.getElementById(id), trigger=document.getElementById(map[id]?.trigger);
+    if(!el||!trigger) return;
+    if(window.__openCustomPNRLDate) { window.__openCustomPNRLDate(id, trigger); return; }
+    // Fallback: native picker, kept hidden from view.
+    try{ if(typeof el.showPicker==='function'){ el.showPicker(); } else { el.click(); } }catch(e){ el.click(); }
+  }
+  function syncTrigger(id){
+    const el=document.getElementById(id), trigger=document.getElementById(map[id]?.trigger);
+    if(!el||!trigger) return;
+    const v=el.value||'';
+    trigger.dataset.value=v;
+    trigger.title=v ? ('Tanggal: '+v.split('-').reverse().join('/')) : 'Pilih tanggal';
+  }
+  function bind(){
+    Object.keys(map).forEach(id=>{
+      const el=document.getElementById(id), trigger=document.getElementById(map[id].trigger);
+      if(!el||!trigger||trigger.dataset.bound==='1') return;
+      trigger.dataset.bound='1';
+      trigger.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();openFor(id);});
+      el.addEventListener('change',()=>syncTrigger(id));
+      syncTrigger(id);
+    });
+  }
+  window.__openCustomPNRLDate=function(id,trigger){
+    const pop=document.getElementById('globalDatePop');
+    if(pop){
+      // The existing custom picker exposes openPop only inside its closure, so dispatch a controlled synthetic click to a temporary shell is unreliable.
+      // Create a tiny compatible anchor and use the native picker as the final fallback.
+    }
+    const el=document.getElementById(id);
+    try{if(typeof el.showPicker==='function'){el.showPicker();return;}}catch(e){}
+    try{el.click();}catch(e){}
+  };
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind); else bind();
+})();
+</script>
+
+<style id="date-selected-visible-fix">
+.date-icon-only{width:auto!important;min-width:42px;height:42px;padding:0 10px!important;gap:8px!important;white-space:nowrap}
+.date-icon-only .date-selected-text{display:inline-block;min-width:0;font-size:12px;font-weight:800;color:#0f172a;line-height:1}
+.date-icon-only:not(.has-date) .date-selected-text{display:none}
+.date-field-compact{align-items:center!important}
+.date-field-compact .date-caption{margin-right:1px!important}
+</style>
+
+<style id="single-table-archive-style">
+.archive-one-table{margin-top:2px}.archive-one-table table{min-width:1050px}.archive-summary{margin-top:10px;text-align:right}
+@media(max-width:900px){.archive-one-table table{min-width:900px}}
+</style>
 </head>
 <body>
 <header>
@@ -109,7 +201,7 @@ td{border-bottom:1px solid #eef2f7}
 
 </aside><section>
 <div id="uploadPage" class="tab-page active">
-<div class="premium-overview">
+<div class="premium-overview premium-overview-compact">
   <div class="overview-main">
     <div>
       <div class="eyebrow">Status Operasional</div>
@@ -123,19 +215,38 @@ td{border-bottom:1px solid #eef2f7}
   <div class="metric blue"><div class="label">Pemeriksaan</div><div class="value" id="dashTotal">0</div><div class="sub">Total data</div></div>
   <div class="metric success"><div class="label">Selesai</div><div class="value" id="dashDone">0</div><div class="sub" id="dashDonePct">0% selesai</div></div>
   <div class="metric warn"><div class="label">Belum selesai</div><div class="value" id="dashPending">0</div><div class="sub">Perlu ditindaklanjuti</div></div>
-  <div class="metric"><div class="label">Batch aktif</div><div class="value" id="dashBatch">0</div><div class="sub">Kelompok FPPR</div></div>
 </div>
 <section class="card" style="margin-bottom:18px">
-  <div class="action-panel">
-    <div class="field"><strong>Tanggal Dikirim</strong><input id="batchSentPremiumMirror" type="text" readonly placeholder="Pilih tanggal"></div>
-    <div class="field"><strong>Tanggal Sampai PRN</strong><input id="batchReceivedPremiumMirror" type="text" readonly placeholder="Pilih tanggal"></div>
-    <button class="btn" type="button" onclick="applyBatchTimes()">Terapkan ke batch aktif</button>
+  <div style="display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap">
+    <button class="date-icon-only" type="button" id="monitorDateTrigger" aria-label="Pilih tanggal monitoring" title="Pilih tanggal"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"></rect><path d="M16 2.5v4M8 2.5v4M3 9.5h18"></path></svg><span class="date-selected-text"></span></button>
+    <input id="monitorDate" type="date" aria-hidden="true" tabindex="-1" class="date-hidden-native">
+    <button class="btn secondary" type="button" id="monitorDateReset">Semua tanggal</button>
   </div>
-  <div class="small" style="margin-top:8px">Tanggal di atas berlaku untuk seluruh pemeriksaan pada batch yang sedang dipilih.</div>
 </section>
-<section class="card"><h2>Upload FPPR</h2><div class="grid"><label class="drop"><strong>PDF FPPR / data pasien</strong><br><span class="small">Klik untuk memilih PDF</span><input id="patientPdf" type="file" accept="application/pdf"><div id="patientInfo" class="small"></div></label></div><div id="message"></div></section>
-<section class="card"><h2>Pengiriman Batch</h2><div class="toolbar date-toolbar"><div class="date-field"><strong>Tanggal Dikirim</strong><input id="batchSent" type="text" inputmode="none" autocomplete="off" readonly aria-label="Tanggal Dikirim" placeholder="Pilih tanggal"></div><div class="date-field"><strong>Tanggal Sampai PRN</strong><input id="batchReceived" type="text" inputmode="none" autocomplete="off" readonly aria-label="Tanggal Sampai PRN" placeholder="Pilih tanggal"></div><button class="btn" onclick="applyBatchTimes()">Terapkan ke semua</button></div><div class="small" style="margin-top:8px">Klik kotak tanggal untuk memilih tanggal. Tidak ada jam.</div></section>
-<section class="card"><h2>Daftar Pemeriksaan</h2><div class="toolbar" style="margin-bottom:12px"><input id="search" placeholder="Cari nama / BJM / tes..." style="min-width:260px"><button class="btn secondary" onclick="exportCSV()">Export CSV</button></div><div style="overflow:auto;max-height:650px"><table><thead><tr><th>Nama</th><th>Tes</th><th>Episode</th><th>Lab Episode</th><th>Dikirim</th><th>Sampai PRN</th><th>Aksi</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+<section class="card"><h2>Upload FPPR</h2>
+<div class="grid"><label class="drop"><strong>PDF FPPR / data pasien</strong><br><span class="small">Klik untuk memilih satu atau beberapa PDF</span><input id="patientPdf" type="file" accept="application/pdf" multiple><div id="patientInfo" class="small"></div></label></div>
+<div id="message"></div>
+<section class="card batch-date-settings" style="margin-top:18px;margin-bottom:0;box-shadow:none;border:1px solid #e2e8f0">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+    <div>
+      <div style="font-size:14px;font-weight:800;color:#0f172a">Tanggal Pengiriman</div>
+      <div class="small" style="margin-top:4px">Setelah upload PDF, pilih tanggal dikirim dan tanggal sampai PRN untuk data yang terakhir diunggah.</div>
+    </div>
+    <div style="display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap">
+      <div class="date-field-compact">
+        <div class="date-caption">Dikirim</div>
+        <button class="date-icon-only" type="button" id="setBatchSentTrigger" aria-label="Pilih tanggal dikirim" title="Pilih tanggal dikirim"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"></rect><path d="M16 2.5v4M8 2.5v4M3 9.5h18"></path></svg><span class="date-selected-text"></span></button>
+        <input id="setBatchSent" type="date" aria-hidden="true" tabindex="-1" class="date-hidden-native">
+      </div>
+      <div class="date-field-compact">
+        <div class="date-caption">Sampai PRN</div>
+        <button class="date-icon-only" type="button" id="setBatchReceivedTrigger" aria-label="Pilih tanggal sampai PRN" title="Pilih tanggal sampai PRN"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"></rect><path d="M16 2.5v4M8 2.5v4M3 9.5h18"></path></svg><span class="date-selected-text"></span></button>
+        <input id="setBatchReceived" type="date" aria-hidden="true" tabindex="-1" class="date-hidden-native">
+      </div>
+      <button class="btn" type="button" id="applyBatchDatesBtn">Simpan tanggal</button>
+    </div>
+  </div>
+</section></section>
 </div>
 <div id="archivePage" class="tab-page">
 <section class="card"><h2>Arsip & Pencarian</h2><p class="small">Pilih rentang tanggal, lalu cari No. BJM atau nama. Data dapat diurutkan berdasarkan kolom.</p><div class="toolbar" style="margin-bottom:12px">
@@ -1015,11 +1126,11 @@ function status(item){
   return ['wait','Menunggu hasil'];
 }
 function filterDate(d){
-  document.getElementById('search').value=d;
+  if(document.getElementById('search')) document.getElementById('search').value=d;
   render();
 }
 function render(){
-  const q=norm(document.getElementById('search').value);
+  const q=norm(document.getElementById('search')?.value);
   const body=document.getElementById('rows'); body.innerHTML='';
   data.filter(x=>!q||norm(x.name+' '+x.test+' '+x.bjm).includes(q)).forEach(x=>{
     const idx=data.indexOf(x);
@@ -1142,19 +1253,36 @@ function renderArchive(){
   let from=document.getElementById('archiveFrom').value||archiveFrom, to=document.getElementById('archiveTo').value||archiveTo;
   archiveFrom=from; archiveTo=to;
   if(!from||!to){title.textContent='Pilih rentang tanggal';el.innerHTML='<div class="small">Belum ada rentang tanggal.</div>';return}
-  if(from>to){const t=from;from=to;to=t;archiveFrom=from;archiveTo=to;document.getElementById('archiveFrom').value=from;document.getElementById('archiveTo').value=to}
+  if(from>to){const t=from;from=to;to=t;archiveFrom=from;archiveTo=to;document.getElementById('archiveFrom').value=from;document.getElementById('archiveTo').value=to;}
   const q=norm(document.getElementById('archiveSearch').value);
   const key=document.getElementById('archiveSort').value,dir=document.getElementById('archiveDir').value==='desc'?-1:1;
-  let rows=data.filter(x=>x.fpprDate>=from&&x.fpprDate<=to&&(!q||norm(x.name+' '+x.bjm+' '+x.test).includes(q)));
-  rows.sort((a,b)=>{const av=archiveSortKey(a,key),bv=archiveSortKey(b,key);if(av<bv)return -1*dir;if(av>bv)return 1*dir;return 0});
+  let rows=data.filter(x=>x.fpprDate>=from&&x.fpprDate<=to&&(!q||norm(x.name+' '+x.bjm+' '+x.test+' '+x.labEpisode).includes(q)));
+  rows.sort((a,b)=>{const av=archiveSortKey(a,key),bv=archiveSortKey(b,key);if(av<bv)return -1*dir;if(av>bv)return 1*dir;return 0;});
   title.textContent=`Arsip ${new Date(from+'T00:00:00').toLocaleDateString('id-ID')} s/d ${new Date(to+'T00:00:00').toLocaleDateString('id-ID')} · ${rows.length} pemeriksaan`;
-  if(!rows.length){el.innerHTML='<div class="small">Tidak ada data yang sesuai filter.</div>';return}
-  const groups={};rows.forEach(x=>(groups[x.batchId||'lama']??=[]).push(x));
-  el.innerHTML=Object.entries(groups).map(([bid,rs])=>{
-    const doneCount=rs.filter(x=>x.done).length;
-    const overdueCount=rs.filter(x=>!x.done&&estimate(x)&&new Date()>=estimate(x)).length;
-    return `<div class="card" style="box-shadow:none;border:1px solid #e5e7eb"><b>Batch ${bid==='lama'?'lama':esc(bid)}</b><div class="small" style="margin:5px 0 10px">${rs.length} pemeriksaan · ${doneCount} selesai · ${overdueCount?`<span class="warning-text">⚠ ${overdueCount} lewat estimasi</span>`:'Tidak ada yang lewat estimasi'}</div><div style="overflow:auto"><table><thead><tr><th>Tanggal FPPR</th><th>Nama</th><th>Tes</th><th>No. BJM</th><th>Sampai PRN</th><th>Estimasi selesai</th><th>Status</th><th class="complete-cell">Selesai</th></tr></thead><tbody>${rs.map(x=>{const idx=data.indexOf(x),e=estimate(x),overdue=!!e&&new Date()>=e&&!x.done,rowClass=x.done?'done-row':(overdue?'warning-row':'');return `<tr class="${rowClass}"><td class="nowrap">${esc(x.fpprDate)}</td><td>${esc(x.name)}</td><td>${esc(x.test)}</td><td>${bjmCell(x.bjm)}</td><td class="nowrap">${x.received?fmt(x.received):'-'}</td><td class="nowrap">${fmt(e)}</td><td><span class="badge ${x.done?'done':(overdue?'late':status(x)[0])}">${x.done?'Selesai':(overdue?'⚠ Lewat estimasi':status(x)[1])}</span></td><td class="complete-cell"><label class="check-wrap" title="Tandai selesai"><input type="checkbox" ${x.done?'checked':''} onchange="toggleDone(${idx},this.checked)"></label></td></tr>`}).join('')}</tbody></table></div></div>`
-  }).join('')
+  if(!rows.length){el.innerHTML='<div class="small">Tidak ada data yang sesuai filter.</div>';return;}
+
+  const doneCount=rows.filter(x=>x.done).length;
+  const pendingCount=rows.length-doneCount;
+  const table=`<div class="table-shell archive-one-table"><table>
+    <thead><tr>
+      <th>Tanggal FPPR</th><th>Nama</th><th>Tes</th><th>EPISODE</th><th>LAB EPISODE</th><th>Dikirim</th><th>Sampai PRN</th><th class="complete-cell">Selesai</th>
+    </tr></thead><tbody>
+    ${rows.map(x=>{
+      const idx=data.indexOf(x),rowClass=x.done?'done-row':'';
+      return `<tr class="${rowClass}">
+        <td class="nowrap">${esc(x.fpprDate||'-')}</td>
+        <td>${esc(x.name||'-')}</td>
+        <td>${esc(x.test||'-')}</td>
+        <td>${bjmCell(x.bjm||'')}</td>
+        <td>${labEpisodeCell(x.labEpisode||'')}</td>
+        <td class="nowrap">${x.sent?fmt(x.sent):'-'}</td>
+        <td class="nowrap">${x.received?fmt(x.received):'-'}</td>
+        <td class="complete-cell"><label class="check-wrap" title="Tandai selesai"><input type="checkbox" ${x.done?'checked':''} onchange="toggleDone(${idx},this.checked)"></label></td>
+      </tr>`;
+    }).join('')}
+    </tbody></table></div>
+    <div class="small archive-summary">${rows.length} pemeriksaan · ${doneCount} selesai · ${pendingCount} belum selesai</div>`;
+  el.innerHTML=table;
 }
 
 function saveData(){
@@ -1162,7 +1290,7 @@ function saveData(){
   if(!__firebaseApplyingRemote && window.__pnrlFirebaseSaveImpl) window.__pnrlFirebaseSaveImpl(data);
 }
 function clearAll(){if(confirm('Hapus semua data monitoring?')){data=[];saveData();archiveDates();render();}}
-document.getElementById('search').addEventListener('input',render);
+document.getElementById('search')?.addEventListener('input',render);
 document.getElementById('tatSearch').addEventListener('input',renderTatDatabase);
 document.getElementById('tatCategory').addEventListener('change',renderTatDatabase);
 
@@ -1224,8 +1352,9 @@ function mergeSplitTestLines(tests){
         if(!exact && typeof TAT_IMPORTED_DB!=='undefined') exact=(TAT_IMPORTED_DB.batch_tests||[]).some(x=>norm2(x.name_raw||x.name)===cn);
         // Fragmen yang sangat khas dari nama tes yang terpotong secara visual.
         const continuation=/^(cairan|serum|plasma|urin|urine|darah|faeces|feses|pleura|csf|wholeblood|whole blood|16\/18|genotype|berbasis|\(new\)|new\b|release assay|assay|and antibodies|antibodies|profile|panel|genotype\b)/i.test(next);
-        const punctuated=/[,;:]$/.test(cur) || /\bwith$/i.test(cur) || /\bberbasis$/i.test(cur);
-        if(exact || (continuation && punctuated)){ cur=combined; i++; changed=true; } else break;
+        const unclosedParen=(cur.match(/\(/g)||[]).length>(cur.match(/\)/g)||[]).length;
+        const punctuated=/[,;:]$/.test(cur) || /\bwith$/i.test(cur) || /\bberbasis$/i.test(cur) || unclosedParen;
+        if(exact || unclosedParen || (continuation && punctuated)){ cur=combined; i++; changed=true; } else break;
       }
       if(cur) out.push(cur);
     }
@@ -1237,8 +1366,8 @@ function mergeSplitTestLines(tests){
 
 function parsePatientsFromLayout(pages){
   const found=[];
-  const bjmRe=/BJM\d{9,}/i;
-  const labEpisodeRe=/\b26\d{8,}(?:-[A-Za-z0-9/]+)?\b/;
+  const bjmRe=/^BJM\d{9,}$/i;
+  const labEpisodeRe=/^26\d{8,}(?:-[A-Za-z0-9/]+)?$/;
   const skipParam=/^(parameter|catatan|status|sampel|nama|id pasien|pengirim|umur|specimen no\.?|episode no\.?)$/i;
   const patients=[];
   let patientSeq=0;
@@ -1254,22 +1383,29 @@ function parsePatientsFromLayout(pages){
       .replace(/\s+/g,' ').trim();
   }
 
+  // Posisi kolom pada FPPR:
+  // Nama ~ x 57, JK/DOB ~ x 199, Specimen ~ x 284, Parameter ~ x 367, Catatan ~ x 505.
+  // Sengaja TIDAK menggunakan fallback ke seluruh baris untuk BJM, karena BJM juga bisa muncul di Catatan.
+  function nameFromLine(line){
+    return line.items.filter(it=>Number(it.x||0)<190)
+      .map(it=>it.text).join(' ').replace(/\s+/g,' ').trim();
+  }
+  function specimenItems(line){
+    return line.items.filter(it=>Number(it.x||0)>=275 && Number(it.x||0)<360);
+  }
+  function bjmFromLine(line){
+    const m=specimenItems(line).map(it=>String(it.text||'').trim()).find(t=>bjmRe.test(t));
+    return m?m.toUpperCase():'';
+  }
+  function labFromLine(line){
+    const m=specimenItems(line).map(it=>String(it.text||'').trim()).find(t=>labEpisodeRe.test(t));
+    return m?m.split('-')[0]:'';
+  }
   function paramFromLine(line){
-    const items=line.items.filter(it=>it.x>=350 && it.x<500);
+    const items=line.items.filter(it=>Number(it.x||0)>=345 && Number(it.x||0)<500);
     if(!items.length) return '';
     return items.map(it=>it.text).join(' ').replace(/\s+/g,' ').trim();
   }
-
-  function labFromLine(line){
-    for(const it of line.items){
-      const m=String(it.text||'').match(labEpisodeRe);
-      if(m) return m[0].split('-')[0];
-    }
-    const full=normalizeLine(line);
-    const m=full.match(labEpisodeRe);
-    return m?m[0].split('-')[0]:'';
-  }
-
   function addParamToCurrent(p){
     if(!current || !p) return;
     p=String(p).replace(/\s+/g,' ').trim();
@@ -1277,13 +1413,15 @@ function parsePatientsFromLayout(pages){
     if(/^\d+(?:\.\d+)?$/.test(p)) return;
     if(/^(Tanggal|To Lab Site|Packing Session Number|Nama|ID Pasien|Parameter|Catatan|BK|DG|TK|TL|Status|Pengirim|Umur|Specimen No|Episode No)$/i.test(p)) return;
     if(/^(Pengirim Umur|ID Pasien DOB|Specimen No\.?|Nama JK Episode No\.?|From Lab Site|To Lab Site)$/i.test(p)) return;
+    // Catatan/ketentuan/footer bukan pemeriksaan.
+    // Kolom Catatan pada FPPR dapat terbaca sebagai parameter pada PDF tertentu,
+    // sehingga baris yang jelas merupakan catatan/saran/kesan wajib dibuang.
     if(/^(Keruh|Perujuk|Pembuat Keputusan|kondisi sampel|bermasalah tapi harus dikerjakan)/i.test(p)) return;
-    if(/^(keluhan|hasil|pemeriksaan|obat|minum|makan|tidak ada|tidak|sus\.? |riw\.?|kontrol|mcu|sampel|hepatitis|curbexvit|diminu?m|nyeri|sakit|batuk|sesak|nafas|pasca|hamil|susp\.?)/i.test(p)) return;
+    if(/^(Saran|Kesan|Catatan|Keluhan)\b/i.test(p)) return;
+    if(/^=/.test(p)) return;
     current.tests.push(p);
   }
 
-  // Build patient blocks. The Lab Episode is detected independently from the
-  // parameter line because it is commonly printed directly below the BJM.
   for(let pageIndex=0; pageIndex<pages.length; pageIndex++){
     const lines=pages[pageIndex]||[];
     for(let li=0; li<lines.length; li++){
@@ -1293,46 +1431,45 @@ function parsePatientsFromLayout(pages){
       if(isFooter(full)) break;
       if(isHeader(full)) continue;
 
-      const bjmItem=line.items.find(it=>bjmRe.test(String(it.text||'')));
-      if(bjmItem){
-        const bjm=(String(bjmItem.text).match(bjmRe)||[''])[0].toUpperCase();
-        let nameItems=line.items.filter(it=>it.x<260).map(it=>it.text).join(' ').replace(/\s+/g,' ').trim();
-        if(!nameItems || /^(L|P)$/i.test(nameItems) || /^\d/.test(nameItems)){
-          for(let j=Math.max(0,li-6);j<li;j++){
-            const cand=lines[j].items.filter(it=>it.x<260).map(it=>it.text).join(' ').replace(/\s+/g,' ').trim();
-            if(!cand || /^(L|P|Nama|Pengirim|Umur|ID Pasien|DOB)$/i.test(cand) || /^\d/.test(cand)) continue;
-            if(/^(FORMULIR|Tanggal:|To Lab Site|Packing Session|Specimen No|Parameter|Catatan)/i.test(cand)) continue;
-            nameItems=cand; break;
-          }
-        }
-        const name=cleanName(nameItems);
-        current={bjm,name:name||'Nama tidak terbaca',tests:[],labEpisode:'',patientSeq:patientSeq++,sourcePages:[pageIndex+1]};
+      const bjm=bjmFromLine(line);
+      if(bjm){
+        const rawName=nameFromLine(line);
+        const badName=/^(Pengirim(?:\s+Umur)?|Umur|ID Pasien(?:\s+DOB)?|DOB|Nama(?:\s+JK\s+Episode\s+No\.?)?|JK|Episode(?:\s+No\.?)?|Specimen No\.?|Parameter|Catatan|From Lab Site|To Lab Site)$/i;
+        const name=cleanName(rawName);
+        current={
+          bjm,
+          name:(!name||badName.test(name))?'Nama tidak terbaca':name,
+          tests:[],
+          labEpisode:'',
+          patientSeq:patientSeq++,
+          sourcePages:[pageIndex+1]
+        };
         patients.push(current);
 
-        // Find the Lab Episode in the specimen column below this BJM, before the next BJM.
-        for(let j=li+1;j<Math.min(lines.length,li+12);j++){
+        // Lab Episode adalah specimen pertama pada baris pasien, bukan BJM di Catatan.
+        for(let j=li;j<Math.min(lines.length,li+6);j++){
           const ahead=lines[j], aheadFull=normalizeLine(ahead);
-          if(!aheadFull || isFooter(aheadFull)) break;
-          if(ahead.items.some(it=>bjmRe.test(String(it.text||'')))) break;
+          if(j>li && bjmFromLine(ahead)) break;
           const lab=labFromLine(ahead);
           if(lab){ current.labEpisode=lab; break; }
         }
 
-        const sameParam=paramFromLine(line);
-        if(sameParam) addParamToCurrent(sameParam);
+        addParamToCurrent(paramFromLine(line));
         continue;
       }
 
       if(!current) continue;
-      const lab=labFromLine(line);
-      if(lab && !current.labEpisode) current.labEpisode=lab;
-      const param=paramFromLine(line);
-      if(param) addParamToCurrent(param);
+      // Setelah pasien ditemukan, semua parameter berikutnya tetap milik pasien itu
+      // sampai muncul BJM baru. Jangan pernah mengambil BJM dari Catatan.
+      addParamToCurrent(paramFromLine(line));
     }
   }
 
   for(const p of patients){
-    const tests=mergeSplitTestLines(p.tests);
+    const tests=mergeSplitTestLines(p.tests).filter(test=>{
+      const t=String(test||'').replace(/\s+/g,' ').trim();
+      return t && !/^(Saran|Kesan|Catatan|Keluhan)\b/i.test(t) && !/^=/.test(t);
+    });
     tests.forEach((test,testIndex)=>{
       if(!test) return;
       found.push({
@@ -1344,7 +1481,7 @@ function parsePatientsFromLayout(pages){
         done:false,
         fpprPage:p.sourcePages?.[0]||null,
         sourceRowKey:`${p.bjm}|${p.patientSeq}|${testIndex}`,
-        parserVersion:'layout-v5-param-column'
+        parserVersion:'layout-v7-strict-columns'
       });
     });
   }
@@ -1378,11 +1515,33 @@ function parsePatients(text){
 
 function dedupe(a){const m=new Map();const out=[];a.forEach((x,i)=>{const k=x.sourceRowKey ? (x.batchId||'')+'|'+x.sourceRowKey : (x.name+'|'+x.test+'|'+x.bjm); if(x.sourceRowKey){ if(m.has(k)) return; m.set(k,true); } out.push(x);});return out;}
 
+function exactRowKey(x){
+  return [x.batchId||'lama',norm(x.name||''),norm(x.test||''),String(x.bjm||'').toUpperCase(),String(x.labEpisode||'')].join('|');
+}
+function dedupeExactRows(arr){
+  const seen=new Set(); const out=[];
+  for(const x of (arr||[])){
+    const k=exactRowKey(x);
+    if(seen.has(k)) continue;
+    seen.add(k); out.push(x);
+  }
+  return out;
+}
 function cleanInvalidStoredData(){
   const before=data.length;
   data=data.filter(x=>x && x.bjm && x.test && x.name && x.name!=='Nama tidak terbaca' && !/^FORMULIR PERMINTAAN/i.test(x.name));
+  data=data.filter(x=>{
+    const t=String(x.test||'').replace(/\s+/g,' ').trim();
+    return !/^(Saran|Kesan|Catatan|Keluhan)\b/i.test(t) && !/^=/.test(t);
+  });
   const seen=new Set();
   data=data.filter(x=>{ if(x.sourceRowKey){ const k=(x.batchId||'lama')+'|'+x.sourceRowKey; if(seen.has(k)) return false; seen.add(k); return true; } return true; });
+
+  // Hapus hanya baris yang benar-benar identik dalam batch yang sama:
+  // nama + tes + BJM + Lab Episode. Jadi hasil parser tidak membuat baris ganda.
+  // Tes berbeda tetap dipertahankan.
+  data=dedupeExactRows(data);
+
   // Migrasi data dari parser lama: Anti-HIV yang muncul bersama Anti-HIV 3 Metode
   // pada pasien/batch yang sama adalah duplikasi hasil parsing dan harus dihapus.
   const grouped=new Map();
@@ -1397,36 +1556,57 @@ function cleanInvalidStoredData(){
 }
 
 document.getElementById('patientPdf').addEventListener('change',async e=>{
- const f=e.target.files[0];if(!f)return;
- document.getElementById('patientInfo').textContent='Membaca PDF...';
- if(typeof pdfjsLib==='undefined'){ message('Pembaca PDF belum tersedia. Buka file saat internet aktif atau tanam PDF.js ke file offline.','warn'); document.getElementById('patientInfo').textContent='Pembaca PDF tidak tersedia.'; e.target.value=''; return; }
+ const files=Array.from(e.target.files||[]).filter(f=>f && /\.pdf$/i.test(f.name));
+ if(!files.length)return;
+ const info=document.getElementById('patientInfo');
+ info.textContent=`Menyiapkan ${files.length} PDF...`;
+ if(typeof pdfjsLib==='undefined'){ message('Pembaca PDF belum tersedia. Buka file saat internet aktif atau tanam PDF.js ke file offline.','warn'); info.textContent='Pembaca PDF tidak tersedia.'; e.target.value=''; return; }
+ let totalRows=0, okFiles=0, skippedFiles=0, failedFiles=0;
+ const messages=[];
  try{
-   const pages=await readPDFPages(f);
-   const text=pages.map(lines=>lines.map(l=>l.items.map(it=>it.text).join(' ')).join('\n')).join('\n');
-   let rows=parsePatientsFromLayout(pages);
-   if(!rows.length) rows=parsePatients(text);
-   const dm=text.match(/Tanggal:\s*(\d{1,2})-(\d{1,2})-(\d{4})/i);
-   const fpprDate=dm?`${dm[3]}-${String(dm[2]).padStart(2,'0')}-${String(dm[1]).padStart(2,'0')}`:'';
-   const pm=text.match(/Packing Session Number\s*[:\-]?\s*([^\n]+)/i);
-   const packingSession=pm?pm[1].trim():'';
-   if(!rows.length){
-     document.getElementById('patientInfo').textContent='Tidak menemukan data pasien/tes yang valid.';
-     message('PDF terbaca, tetapi data pasien/tes tidak berhasil dikenali. Tidak ada data yang disimpan agar arsip tidak menjadi data palsu.','warn');
-     return;
+   for(let fi=0; fi<files.length; fi++){
+     const f=files[fi];
+     info.textContent=`Membaca PDF ${fi+1}/${files.length}: ${f.name}`;
+     try{
+       const pages=await readPDFPages(f);
+       const text=pages.map(lines=>lines.map(l=>l.items.map(it=>it.text).join(' ')).join('\n')).join('\n');
+       let rows=parsePatientsFromLayout(pages);
+       if(!rows.length) rows=parsePatients(text);
+       rows=dedupeExactRows(rows);
+       const dm=text.match(/Tanggal:\s*(\d{1,2})-(\d{1,2})-(\d{4})/i);
+       const fpprDate=dm?`${dm[3]}-${String(dm[2]).padStart(2,'0')}-${String(dm[1]).padStart(2,'0')}`:'';
+       const pm=text.match(/Packing Session Number\s*[:\-]?\s*([^\n]+)/i);
+       const packingSession=pm?pm[1].trim():'';
+       if(!rows.length){ failedFiles++; messages.push(`${f.name}: tidak ada data valid`); continue; }
+       const duplicate = packingSession && data.some(x=>x.packingSession===packingSession && x.fpprDate===fpprDate);
+       if(duplicate){
+         skippedFiles++;
+         messages.push(`${f.name}: dilewati karena Packing Session sudah ada`);
+         continue;
+       }
+       const batchId='B'+Date.now()+'_'+fi+'_'+Math.random().toString(36).slice(2,7);
+       currentBatchId=batchId;
+       rows.forEach((r,i)=>{
+         r.fpprDate=fpprDate;r.batchId=batchId;r.packingSession=packingSession;r.fileName=f.name;r.uploadedAt=new Date().toISOString();r.done=false;
+         r.sourceRowKey=(r.sourceRowKey||((r.bjm||'')+'|'+i));
+       });
+       data=[...data,...rows];
+       totalRows+=rows.length; okFiles++;
+       selectedArchiveDate=fpprDate; archiveFrom=fpprDate; archiveTo=fpprDate;
+     }catch(err){
+       failedFiles++;
+       messages.push(`${f.name}: ${err.message||err}`);
+     }
    }
-   const duplicate = packingSession && data.some(x=>x.packingSession===packingSession && x.fpprDate===fpprDate);
-   if(duplicate && !confirm(`Packing Session ${packingSession} sudah ada pada arsip ${fpprDate}. Tetap simpan sebagai batch baru?`)) return;
-   const batchId='B'+Date.now(); currentBatchId=batchId;
-   rows.forEach(r=>{r.fpprDate=fpprDate;r.batchId=batchId;r.packingSession=packingSession;r.fileName=f.name;r.uploadedAt=new Date().toISOString();r.done=false;});
-   rows.forEach((r,i)=>{r.sourceRowKey=(r.sourceRowKey||((r.bjm||'')+'|'+i));}); data=[...data,...rows];
-   saveData(); selectedArchiveDate=fpprDate; archiveFrom=fpprDate; archiveTo=fpprDate;
-   document.getElementById('archiveFrom').value=fpprDate; document.getElementById('archiveTo').value=fpprDate;
-   archiveDates(); render(); renderArchive();
-   document.getElementById('patientInfo').textContent=`✓ ${rows.length} pemeriksaan valid ditemukan dan disimpan sebagai batch baru`;
-   message(`FPPR tersimpan pada arsip tanggal ${fpprDate}.`,'');
- }catch(err){
-   message('Gagal membaca PDF: '+err.message,'warn');
- } finally { e.target.value=''; }
+   if(totalRows){
+     saveData();
+     const latestDate=files.map(f=>{const m=f.name.match(/(\d{2})[-_](\d{2})[-_](\d{4})/);return m?`${m[3]}-${m[2]}-${m[1]}`:''}).filter(Boolean).pop() || '';
+     if(latestDate){ selectedArchiveDate=latestDate; archiveFrom=latestDate; archiveTo=latestDate; const af=document.getElementById('archiveFrom'),at=document.getElementById('archiveTo'); if(af)af.value=latestDate;if(at)at.value=latestDate; }
+     archiveDates(); render(); renderArchive();
+   }
+   info.textContent=`✓ ${okFiles} PDF berhasil, ${totalRows} pemeriksaan masuk${skippedFiles?`, ${skippedFiles} dilewati`:''}${failedFiles?`, ${failedFiles} gagal`:''}`;
+   if(messages.length) message(messages.join(' • '),'warn'); else message(`${okFiles} PDF FPPR berhasil diproses.`,'');
+ }finally{ e.target.value=''; }
 });
 
 function parseTATAuto(text){
@@ -2026,7 +2206,7 @@ function syncBatchReceived(){ syncBatchTimes(); }
 function toggleDone(i,checked){ data[i].done=checked; saveData(); render(); renderArchive(); }
 
 function render(){
-  const q=norm(document.getElementById('search').value||'');
+  const q=norm(document.getElementById('search')?.value||'');
   const body=document.getElementById('rows'); if(!body)return; body.innerHTML='';
   data.filter(x=>!q||norm(x.name+' '+x.test+' '+x.bjm).includes(q)).forEach(x=>{
     const idx=data.indexOf(x);
@@ -2262,7 +2442,7 @@ function updatePremiumDashboard(){
   const d=document.getElementById('dashToday');
   if(d)d.textContent=new Date().toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'});
   const s=document.getElementById('dashSyncText');
-  if(s)s.textContent=total?`${batches} batch · ${pending} belum selesai`:'Belum ada data';
+  if(s)s.textContent=total?`${pending} belum selesai`:'Belum ada data';
   if(window.syncPremiumMirrors)window.syncPremiumMirrors();
 }
 </script>
@@ -2282,5 +2462,426 @@ function updatePremiumDashboard(){
 })();
 </script>
 
+
+<script>
+(function(){
+  const monitorDate = document.getElementById('monitorDate');
+  const dateBtn = document.getElementById('monitorDateBtn');
+  const resetBtn = document.getElementById('monitorDateReset');
+  if(dateBtn && monitorDate){
+    dateBtn.addEventListener('click',()=>{
+      try{ if(typeof monitorDate.showPicker==='function') monitorDate.showPicker(); else monitorDate.click(); }catch(e){ monitorDate.click(); }
+    });
+    monitorDate.addEventListener('change',()=>setMonitorDate(monitorDate.value||''));
+  }
+  window.__monitorSelectedDate = '';
+  function selectedRows(){
+    const q=norm(document.getElementById('search')?.value||'');
+    const d=window.__monitorSelectedDate||'';
+    return (data||[]).filter(x=>
+      (!d || String(x.fpprDate||'')===d) &&
+      (!q || norm(String(x.name||'')+' '+String(x.test||'')+' '+String(x.bjm||'')+' '+String(x.labEpisode||'')).includes(q))
+    );
+  }
+  function setMonitorDate(v){
+    window.__monitorSelectedDate=v||'';
+    if(monitorDate) monitorDate.value=v||'';
+    if(resetBtn) resetBtn.textContent='Semua tanggal';
+    render();
+    if(window.renderArchive) window.renderArchive();
+  }
+  function updateDashboardFiltered(){
+    const rows=selectedRows();
+    const total=rows.length, done=rows.filter(x=>x.done).length, pending=total-done;
+    const pct=total?Math.round(done/total*100):0;
+    const ids={dashTotal:total,dashDone:done,dashPending:pending};
+    Object.entries(ids).forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.textContent=val;});
+    const p=document.getElementById('dashDonePct');if(p)p.textContent=`${pct}% selesai`;
+    const d=document.getElementById('dashToday');
+    if(d){
+      d.textContent=window.__monitorSelectedDate
+        ? new Date(window.__monitorSelectedDate+'T00:00:00').toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'})
+        : 'Semua tanggal';
+    }
+    const s=document.getElementById('dashSyncText');
+    if(s)s.textContent=window.__monitorSelectedDate
+      ? `${total} pemeriksaan · ${pending} belum selesai`
+      : `Semua tanggal · ${pending} belum selesai`;
+  }
+  // Replace monitoring render so the date selection controls both table and counters.
+  window.render=function(){
+    const body=document.getElementById('rows'); if(!body)return;
+    const rows=selectedRows();
+    body.innerHTML='';
+    rows.forEach(x=>{
+      const idx=data.indexOf(x);
+      const tr=document.createElement('tr');
+      if(x.done) tr.className='done-row';
+      tr.innerHTML=`<td>${esc(x.name||'')}</td><td>${esc(x.test||'')}</td><td>${bjmCell(x.bjm||'')}</td><td>${labEpisodeCell(x.labEpisode||'')}</td><td class="nowrap">${x.sent?fmt(x.sent):'-'}</td><td class="nowrap">${x.received?fmt(x.received):'-'}</td><td><div class="actions"><button class="btn danger" onclick="removeRow(${idx})">Hapus</button></div></td>`;
+      body.appendChild(tr);
+    });
+    updateDashboardFiltered();
+  };
+  if(monitorDate){
+    monitorDate.addEventListener('change',()=>setMonitorDate(monitorDate.value));
+    monitorDate.addEventListener('input',()=>setMonitorDate(monitorDate.value));
+  }
+  if(resetBtn) resetBtn.addEventListener('click',()=>setMonitorDate(''));
+  if(monitorDate) monitorDate.addEventListener('keydown',e=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); try{monitorDate.showPicker();}catch(_){ } } });
+  // Search updates filtered counters too.
+  
+  // Keep Firebase/live updates reflected in selected-date metrics.
+  setInterval(updateDashboardFiltered,1000);
+  updateDashboardFiltered();
+})();
+</script>
+
+<script>
+(function initMonitorDatePicker(){
+  const input=document.getElementById('monitorDate');
+  if(!input) return;
+  input.removeAttribute('readonly');
+  input.removeAttribute('disabled');
+  input.addEventListener('change',()=>{
+    if(typeof window.setMonitorDate==='function') window.setMonitorDate(input.value||'');
+  });
+})();
+</script>
+
+<script>
+(function initBatchDateSettings(){
+  const sent=document.getElementById('setBatchSent');
+  const received=document.getElementById('setBatchReceived');
+  const btn=document.getElementById('applyBatchDatesBtn');
+  if(!sent||!received||!btn)return;
+  const latestBatch=()=>{
+    const ids=[...new Set((data||[]).map(x=>x.batchId).filter(Boolean))];
+    return currentBatchId && ids.includes(currentBatchId) ? currentBatchId : (ids.length?ids[ids.length-1]:null);
+  };
+  let lastBid=null;
+  const syncFields=()=>{
+    const bid=latestBatch();
+    const rows=bid?(data||[]).filter(x=>x.batchId===bid):[];
+    const sv=[...new Set(rows.map(x=>x.sent).filter(Boolean))];
+    const rv=[...new Set(rows.map(x=>x.received).filter(Boolean))];
+    // Only refresh from stored data when the selected batch changes.
+    // This prevents the 1.5s sync loop from erasing a date the user just picked
+    // before pressing 'Simpan tanggal'.
+    if(bid!==lastBid){
+      sent.value=sv.length===1?sv[0]:'';
+      received.value=rv.length===1?rv[0]:'';
+      lastBid=bid;
+    }
+    if(typeof window.refreshBatchDateDisplays==='function') window.refreshBatchDateDisplays();
+  };
+  btn.addEventListener('click',()=>{
+    const bid=latestBatch();
+    if(!bid){alert('Belum ada batch yang dipilih. Upload FPPR terlebih dahulu.');return;}
+    const sv=sent.value||'', rv=received.value||'';
+    if(!sv && !rv){alert('Pilih tanggal Dikirim atau Sampai PRN terlebih dahulu.');return;}
+    (data||[]).forEach(x=>{
+      if(x.batchId===bid){
+        if(sv)x.sent=sv;
+        if(rv)x.received=rv;
+      }
+    });
+    currentBatchId=bid;
+    if(typeof saveData==='function')saveData();
+    if(typeof render==='function')render();
+    if(typeof renderArchive==='function')renderArchive();
+    syncFields();
+  });
+  setTimeout(syncFields,0);
+  setInterval(syncFields,1500);
+})();
+</script>
+
+<script>
+(function(){
+  function fmtDate(iso){
+    if(!iso) return 'Pilih tanggal';
+    const p=iso.split('-');
+    return (p[2]||'').padStart(2,'0')+'/'+(p[1]||'').padStart(2,'0')+'/'+p[0];
+  }
+  function refresh(id){
+    const input=document.getElementById(id), display=document.getElementById(id+'Display');
+    if(!input||!display)return;
+    display.textContent=fmtDate(input.value||'');
+    const shell=input.closest('.date-picker-shell');
+    if(shell)shell.classList.toggle('has-value',!!input.value);
+  }
+  window.refreshBatchDateDisplays=function(){refresh('setBatchSent');refresh('setBatchReceived');};
+  ['setBatchSent','setBatchReceived'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    el.type='date';
+    el.removeAttribute('readonly');
+    el.removeAttribute('disabled');
+    el.addEventListener('change',()=>refresh(id));
+  });
+  window.refreshBatchDateDisplays();
+})();
+</script>
+
+
+<script>
+(function(){
+  const input=document.getElementById('monitorDate');
+  const reset=document.getElementById('monitorDateReset');
+  if(!input) return;
+  window.__monitorSelectedDate = window.__monitorSelectedDate || '';
+  window.setMonitorDate = function(value){
+    window.__monitorSelectedDate = value || '';
+    input.value = window.__monitorSelectedDate;
+    try { if(typeof window.render==='function') window.render(); } catch(e) {}
+    try { if(typeof window.renderArchive==='function') window.renderArchive(); } catch(e) {}
+    const rows=(Array.isArray(data)?data:[]).filter(x=> !window.__monitorSelectedDate || String(x.fpprDate||'')===window.__monitorSelectedDate);
+    const total=rows.length, done=rows.filter(x=>x.done).length, pending=total-done;
+    const t=document.getElementById('dashTotal'); if(t)t.textContent=total;
+    const d=document.getElementById('dashDone'); if(d)d.textContent=done;
+    const p=document.getElementById('dashPending'); if(p)p.textContent=pending;
+    const pct=document.getElementById('dashDonePct'); if(pct)pct.textContent=(total?Math.round(done/total*100):0)+'% selesai';
+  };
+  input.addEventListener('change',()=>window.setMonitorDate(input.value));
+  input.addEventListener('input',()=>window.setMonitorDate(input.value));
+  if(reset) reset.addEventListener('click',()=>window.setMonitorDate(''));
+})();
+</script>
+
+
+<script>
+// Compatibility: legacy date handlers now point to the current batch date fields.
+window.applyBatchReceived=function(){
+  const bid=currentBatchId || ([...new Set((data||[]).map(x=>x.batchId).filter(Boolean))].slice(-1)[0]);
+  const v=document.getElementById('setBatchReceived')?.value||'';
+  if(!bid || !v) return;
+  (data||[]).forEach(x=>{if(x.batchId===bid)x.received=v;});
+  if(typeof saveData==='function') saveData();
+  if(typeof render==='function') render();
+  if(typeof renderArchive==='function') renderArchive();
+};
+</script>
+
+<style>
+/* Visible selected-date indicator */
+.date-icon-only.has-date{width:auto;min-width:42px;padding:0 10px;gap:7px}
+.date-icon-only .date-selected-text{font-size:12px;font-weight:800;color:#0f172a;white-space:nowrap}
+.date-icon-only:not(.has-date) .date-selected-text{display:none}
+.date-icon-only .calendar-glyph{font-size:17px;line-height:1}
+/* Reliable custom date picker: no native mm/dd/yyyy control is exposed. */
+.custom-date-input-hidden{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important;border:0!important;padding:0!important;margin:0!important}
+.custom-date-pop{position:fixed;z-index:99999;width:300px;background:#fff;border:1px solid #dbe3ee;border-radius:16px;box-shadow:0 18px 45px rgba(15,23,42,.18);padding:12px;display:none}
+.custom-date-pop.open{display:block}
+.cdp-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.cdp-title{font-weight:800;color:#0f172a;font-size:14px}
+.cdp-nav{display:flex;gap:6px}.cdp-nav button{width:34px;height:34px;padding:0;border:1px solid #dbe3ee;border-radius:9px;background:#fff;cursor:pointer;color:#0f172a}
+.cdp-week,.cdp-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cdp-week div{text-align:center;font-size:10px;font-weight:800;color:#94a3b8;padding:4px 0}
+.cdp-grid button{height:34px;border:0;border-radius:8px;background:#f8fafc;color:#334155;cursor:pointer;font-size:12px}
+.cdp-grid button:hover{background:#e0e7ff}
+.cdp-grid button.today{box-shadow:inset 0 0 0 1px #93c5fd}
+.cdp-grid button.selected{background:#2563eb;color:#fff;font-weight:800}
+.cdp-grid button.empty{visibility:hidden;cursor:default}
+.cdp-foot{display:flex;justify-content:space-between;margin-top:10px;gap:8px}.cdp-foot button{flex:1;border:1px solid #dbe3ee;background:#f8fafc;border-radius:9px;padding:8px;cursor:pointer;font-size:12px;font-weight:700}
+.date-picker-shell{cursor:pointer!important}
+</style>
+<script>
+(function(){
+  const state={currentId:null, month:new Date()};
+  const ids=['setBatchSent','setBatchReceived','monitorDate'];
+  function pad(n){return String(n).padStart(2,'0')}
+  function iso(y,m,d){return `${y}-${pad(m+1)}-${pad(d)}`}
+  function format(v){if(!v)return 'Pilih tanggal'; const [y,m,d]=v.split('-'); return `${d}/${m}/${y}`}
+  function getEl(id){return document.getElementById(id)}
+  function ensurePop(){
+    let p=document.getElementById('globalDatePop');
+    if(p) return p;
+    p=document.createElement('div'); p.id='globalDatePop'; p.className='custom-date-pop';
+    p.innerHTML=`<div class="cdp-head"><div class="cdp-title" id="cdpTitle"></div><div class="cdp-nav"><button type="button" id="cdpPrev">‹</button><button type="button" id="cdpNext">›</button></div></div><div class="cdp-week"><div>Min</div><div>Sen</div><div>Sel</div><div>Rab</div><div>Kam</div><div>Jum</div><div>Sab</div></div><div class="cdp-grid" id="cdpGrid"></div><div class="cdp-foot"><button type="button" id="cdpToday">Hari ini</button><button type="button" id="cdpClear">Hapus</button></div>`;
+    document.body.appendChild(p);
+    p.addEventListener('click',e=>e.stopPropagation());
+    document.getElementById('cdpPrev').onclick=()=>{state.month.setMonth(state.month.getMonth()-1); renderPop()};
+    document.getElementById('cdpNext').onclick=()=>{state.month.setMonth(state.month.getMonth()+1); renderPop()};
+    document.getElementById('cdpToday').onclick=()=>pick(new Date());
+    document.getElementById('cdpClear').onclick=()=>{const el=getEl(state.currentId); if(el){el.value='';el.dispatchEvent(new Event('change',{bubbles:true}));syncDisplay(el.id);} closePop()};
+    return p;
+  }
+  function syncDisplay(id){
+    const el=getEl(id); if(!el)return;
+    const display=getEl(id+'Display'); if(display)display.textContent=format(el.value||'');
+    const shell=el.closest('.date-picker-shell'); if(shell)shell.classList.toggle('has-value',!!el.value);
+    const triggerId={monitorDate:'monitorDateTrigger',setBatchSent:'setBatchSentTrigger',setBatchReceived:'setBatchReceivedTrigger'}[id];
+    const trigger=triggerId?getEl(triggerId):null;
+    const txt=trigger?trigger.querySelector('.date-selected-text'):null;
+    if(trigger){ trigger.classList.toggle('has-date',!!el.value); trigger.title=el.value?'Tanggal: '+format(el.value):'Pilih tanggal'; }
+    if(txt) txt.textContent=el.value?format(el.value):'';
+    if(id==='monitorDate'){ const dash=getEl('dashToday'); if(dash)dash.textContent=el.value?format(el.value):'Semua tanggal'; }
+  }
+  function positionPop(anchor){
+    const p=ensurePop(); const r=anchor.getBoundingClientRect();
+    let left=Math.min(Math.max(10,r.left),window.innerWidth-310); let top=r.bottom+8; if(top+360>window.innerHeight) top=Math.max(10,r.top-368);
+    p.style.left=left+'px'; p.style.top=top+'px';
+  }
+  function openPop(id,anchor){
+    state.currentId=id; const el=getEl(id); if(!el)return;
+    const base=el.value?new Date(el.value+'T00:00:00'):new Date(); state.month=new Date(base.getFullYear(),base.getMonth(),1);
+    syncDisplay(id); renderPop(); const p=ensurePop(); positionPop(anchor); p.classList.add('open');
+  }
+  function closePop(){const p=document.getElementById('globalDatePop'); if(p)p.classList.remove('open'); state.currentId=null}
+  window.__openGlobalDate=(id,anchor)=>openPop(id,anchor);
+  function pick(date){
+    const el=getEl(state.currentId); if(!el)return; el.value=iso(date.getFullYear(),date.getMonth(),date.getDate()); el.dispatchEvent(new Event('change',{bubbles:true})); syncDisplay(el.id); closePop();
+  }
+  function renderPop(){
+    const p=ensurePop(); const grid=getEl('cdpGrid'); const title=getEl('cdpTitle'); if(!grid||!title)return;
+    const y=state.month.getFullYear(), m=state.month.getMonth(); title.textContent=state.month.toLocaleDateString('id-ID',{month:'long',year:'numeric'});
+    const first=new Date(y,m,1), last=new Date(y,m+1,0); const start=first.getDay();
+    grid.innerHTML=''; for(let i=0;i<start;i++){const b=document.createElement('button');b.className='empty';grid.appendChild(b)}
+    const chosen=getEl(state.currentId)?.value||''; const now=new Date(); const today=iso(now.getFullYear(),now.getMonth(),now.getDate());
+    for(let d=1;d<=last.getDate();d++){
+      const b=document.createElement('button'); const v=iso(y,m,d); b.textContent=d; if(v===today)b.classList.add('today'); if(v===chosen)b.classList.add('selected'); b.onclick=()=>pick(new Date(y,m,d)); grid.appendChild(b);
+    }
+  }
+  function setup(){
+    const triggerMap={
+      monitorDate:'monitorDateTrigger',
+      setBatchSent:'setBatchSentTrigger',
+      setBatchReceived:'setBatchReceivedTrigger'
+    };
+    ids.forEach(id=>{
+      const el=getEl(id); if(!el)return;
+      el.classList.add('custom-date-input-hidden');
+      el.setAttribute('tabindex','-1');
+      el.setAttribute('aria-hidden','true');
+      el.style.pointerEvents='none';
+      const trigger=getEl(triggerMap[id]);
+      if(trigger && !trigger.dataset.customDateBound){
+        trigger.dataset.customDateBound='1';
+        trigger.addEventListener('click',e=>{
+          e.preventDefault();
+          e.stopPropagation();
+          openPop(id,trigger);
+        });
+      }
+      syncDisplay(id);
+    });
+    document.addEventListener('click',e=>{const p=getEl('globalDatePop'); if(p && p.classList.contains('open') && !p.contains(e.target)) closePop()});
+    window.addEventListener('resize',closePop); window.addEventListener('scroll',closePop,true);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup); else setup();
+})();
+</script>
 </body>
 </html>
+
+<script>
+/* Final date-picker guard: always open the custom calendar from the visible icon. */
+(function(){
+  const map={
+    monitorDate:'monitorDateTrigger',
+    setBatchSent:'setBatchSentTrigger',
+    setBatchReceived:'setBatchReceivedTrigger'
+  };
+  function bind(){
+    Object.entries(map).forEach(([inputId,triggerId])=>{
+      const t=document.getElementById(triggerId);
+      const i=document.getElementById(inputId);
+      if(!t||!i||t.dataset.finalDateBound)return;
+      t.dataset.finalDateBound='1';
+      t.addEventListener('click',e=>{
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        e.stopPropagation();
+        if(typeof window.__openGlobalDate==='function'){
+          window.__openGlobalDate(inputId,t);
+        }
+      },true);
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind);
+  else bind();
+})();
+</script>
+
+<style id="final-unified-table-style">
+  /* Final UI: never show individual batch cards. */
+  #archiveRows .batch-card{display:none!important}
+  .unified-table-wrap{border:1px solid #e2e8f0;border-radius:16px;overflow:auto;background:#fff}
+  .unified-table-wrap table{width:100%;min-width:1100px;border-collapse:collapse;font-size:13px}
+  .unified-table-wrap th{background:#f8fafc;color:#334155;font-size:11px;text-transform:uppercase;letter-spacing:.05em;padding:12px 10px;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:2}
+  .unified-table-wrap td{padding:11px 10px;border-bottom:1px solid #eef2f7;vertical-align:middle}
+  .unified-table-wrap tbody tr:last-child td{border-bottom:0}
+  .unified-table-wrap tbody tr:hover{background:#f8fbff}
+  .unified-table-wrap .done-row td{background:#dcefe0!important}
+  .unified-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+  .unified-summary .count{font-size:12px;color:#64748b}
+  .unified-summary .legend{font-size:11px;color:#64748b}
+  .unified-empty{padding:28px;text-align:center;color:#64748b}
+  @media(max-width:900px){.unified-table-wrap table{min-width:1000px}}
+</style>
+<script>
+/* FINAL OVERRIDE: archive/monitoring is one table only, never grouped by batch. */
+(function(){
+  function unifiedRowTable(rows){
+    return `<div class="unified-table-wrap"><table><thead><tr>
+      <th>Tanggal FPPR</th>
+      <th>Nama</th>
+      <th>Tes</th>
+      <th>Episode</th>
+      <th>Lab Episode</th>
+      <th>Dikirim</th>
+      <th>Sampai PRN</th>
+      <th class="complete-cell">Selesai</th>
+    </tr></thead><tbody>${rows.map(x=>{
+      const idx=data.indexOf(x);
+      return `<tr class="${x.done?'done-row':''}">
+        <td class="nowrap">${esc(x.fpprDate||'-')}</td>
+        <td>${esc(x.name||'-')}</td>
+        <td>${esc(x.test||'-')}</td>
+        <td>${bjmCell(x.bjm||'')}</td>
+        <td class="nowrap">${labEpisodeCell(x.labEpisode||'')}</td>
+        <td class="nowrap">${x.sent?esc(fmt(x.sent)):'-'}</td>
+        <td class="nowrap">${x.received?esc(fmt(x.received)):'-'}</td>
+        <td class="complete-cell"><label class="check-wrap" title="Tandai selesai"><input type="checkbox" ${x.done?'checked':''} onchange="toggleDone(${idx},this.checked)"></label></td>
+      </tr>`;
+    }).join('')}</tbody></table></div>`;
+  }
+
+  window.renderArchive=function(){
+    const el=document.getElementById('archiveRows');
+    const title=document.getElementById('archiveTitle');
+    if(!el||!title) return;
+    let from=document.getElementById('archiveFrom')?.value||archiveFrom||'';
+    let to=document.getElementById('archiveTo')?.value||archiveTo||'';
+    archiveFrom=from; archiveTo=to;
+    if(!from||!to){
+      title.textContent='Pilih rentang tanggal';
+      el.innerHTML='<div class="unified-empty">Belum ada rentang tanggal.</div>';
+      return;
+    }
+    if(from>to){const t=from;from=to;to=t;archiveFrom=from;archiveTo=to;
+      const af=document.getElementById('archiveFrom'),at=document.getElementById('archiveTo'); if(af)af.value=from;if(at)at.value=to;
+    }
+    const q=norm(document.getElementById('archiveSearch')?.value||'');
+    const key=document.getElementById('archiveSort')?.value||'fpprDate';
+    const dir=document.getElementById('archiveDir')?.value==='desc'?-1:1;
+    let rows=(data||[]).filter(x=>x.fpprDate>=from&&x.fpprDate<=to && (!q||norm([x.name,x.bjm,x.labEpisode,x.test].join(' ')).includes(q)));
+    rows.sort((a,b)=>{
+      if(key==='fpprDate'){
+        const av=a.fpprDate||'', bv=b.fpprDate||''; if(av<bv)return -1*dir;if(av>bv)return 1*dir;
+        const ab=(a.bjm||''),bb=(b.bjm||''); if(ab<bb)return -1;if(ab>bb)return 1; return 0;
+      }
+      const av=archiveSortKey(a,key),bv=archiveSortKey(b,key);
+      if(av<bv)return -1*dir;if(av>bv)return 1*dir;return 0;
+    });
+    title.textContent=`Arsip ${new Date(from+'T00:00:00').toLocaleDateString('id-ID')} s/d ${new Date(to+'T00:00:00').toLocaleDateString('id-ID')} · ${rows.length} pemeriksaan`;
+    if(!rows.length){el.innerHTML='<div class="unified-empty">Tidak ada data yang sesuai filter.</div>';return;}
+    const done=rows.filter(x=>x.done).length;
+    el.innerHTML=`<div class="unified-summary"><div class="count">${rows.length} pemeriksaan · ${done} selesai · ${rows.length-done} belum selesai</div><div class="legend">Data ditampilkan dalam satu tabel</div></div>${unifiedRowTable(rows)}`;
+  };
+
+  /* Re-render immediately and again after any existing startup code finishes. */
+  try{ window.renderArchive(); }catch(e){ console.error(e); }
+  setTimeout(()=>{ try{ window.renderArchive(); }catch(e){ console.error(e); } },50);
+})();
+</script>
