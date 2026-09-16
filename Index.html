@@ -2043,8 +2043,11 @@ function exportCSV(){
   });
 })();
 </script>
-<script>
-// ===== LIVE SYNC FIREBASE =====
+<script type="module">
+// ===== LIVE SYNC FIREBASE (REALTIME) =====
+import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+
 (async function initFirebaseLiveSync(){
   const config={
     apiKey:'AIzaSyApMs7JNqHMETehPq63O-S3N9OfZwr3EfU',
@@ -2053,10 +2056,82 @@ function exportCSV(){
     projectId:'kopken-f598f',
     storageBucket:'kopken-f598f.firebasestorage.app',
     messagingSenderId:'550699829995',
-    appId:'1:9487eddfa98f3260f14cae',
+    appId:'1:550699829995:web:9487eddfa98f3260f14cae',
     measurementId:'G-T0Y1TGP41M'
   };
-  // Keep existing Firebase app settings from the source file when available.
+
+  const setSyncLabel=(text,ok)=>{
+    const el=document.querySelector('.online-status');
+    if(el) el.innerHTML=`<div class="dot" style="${ok?'background:#34D399;box-shadow:0 0 8px #34D399':'background:#F59E0B;box-shadow:0 0 8px #F59E0B'}"></div> ${text}`;
+  };
+
+  try{
+    const app=getApps().length ? getApps()[0] : initializeApp(config);
+    const db=getDatabase(app);
+    const sharedRef=ref(db,'pnrlMonitorShared/data');
+
+    let firstSnapshot=true;
+    let applyingRemote=false;
+    let pendingLocalWrite=false;
+
+    window.__pnrlFirebaseSaveImpl = async function(nextData){
+      pendingLocalWrite=true;
+      try{
+        await set(sharedRef, {
+          items: Array.isArray(nextData)?nextData:[],
+          updatedAt: Date.now()
+        });
+        setSyncLabel('Live Sync Tersambung',true);
+      }catch(err){
+        console.error('Firebase write error:',err);
+        setSyncLabel('Live Sync Gagal Menyimpan',false);
+      }finally{
+        pendingLocalWrite=false;
+      }
+    };
+
+    onValue(sharedRef, snapshot=>{
+      const remote=snapshot.val();
+      if(firstSnapshot){
+        firstSnapshot=false;
+        if(remote && Array.isArray(remote.items)){
+          applyingRemote=true;
+          data=remote.items.map(x=>({...x, sent:dateOnly(x.sent), received:dateOnly(x.received)}));
+          localStorage.setItem('pnrl_monitor',JSON.stringify(data));
+          applyingRemote=false;
+          try{ render(); renderArchive(); archiveDates(); }catch(e){ console.error(e); }
+        }else if(Array.isArray(data) && data.length){
+          window.__pnrlFirebaseSaveImpl(data);
+        }
+        setSyncLabel('Live Sync Tersambung',true);
+        return;
+      }
+
+      if(remote && Array.isArray(remote.items)){
+        applyingRemote=true;
+        __firebaseApplyingRemote=true;
+        data=remote.items.map(x=>({...x, sent:dateOnly(x.sent), received:dateOnly(x.received)}));
+        localStorage.setItem('pnrl_monitor',JSON.stringify(data));
+        __firebaseApplyingRemote=false;
+        applyingRemote=false;
+        try{ render(); renderArchive(); archiveDates(); syncBatchTimes(); }catch(e){ console.error(e); }
+        setSyncLabel('Live Sync Tersambung',true);
+      }
+    }, err=>{
+      console.error('Firebase listener error:',err);
+      setSyncLabel('Live Sync Tidak Tersambung',false);
+    });
+
+    // Override the existing save hook so every local mutation is sent to Firebase.
+    const previousHook=window.__pnrlFirebaseSaveImpl;
+    window.__pnrlFirebaseSaveImpl=previousHook;
+    __firebaseSyncReady=true;
+    __firebaseInitialized=true;
+    setSyncLabel('Live Sync Tersambung',true);
+  }catch(err){
+    console.error('Firebase initialization error:',err);
+    setSyncLabel('Live Sync Tidak Tersambung',false);
+  }
 })();
 </script>
 </body>
