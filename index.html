@@ -990,7 +990,6 @@ renderAll();
 </script>
 <script type="module">
 import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-import { getAuth, onAuthStateChanged, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 import { getDatabase, ref, onValue, update, get } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
 
 (() => {
@@ -1005,11 +1004,11 @@ import { getDatabase, ref, onValue, update, get } from "https://www.gstatic.com/
     appId: '1:550699829995:web:9487eddfa98f3260f14cae',
     measurementId: 'G-T0Y1TGP41M'
   };
-  const DATA_PATH = 'rujukanTrackerShared/v1';
+  const DATA_PATH = 'rujukanTrackerShared/v1'; // Jalur bersama untuk semua salinan Rujukan Tracker
   const emptyState = () => ({batches:[],items:[],tatAliases:{}});
-  let auth, db, dataRef, activeUser = null, stopListener = null;
+  let db, dataRef, activeUser = null, stopListener = null;
   let ready = false, firstSnapshot = true, lastCloudState = emptyState();
-  let syncQueue = Promise.resolve(), anonymousSignInInProgress = false;
+  let syncQueue = Promise.resolve();
 
   const clone = x => JSON.parse(JSON.stringify(x ?? null));
   const stable = x => {
@@ -1158,27 +1157,14 @@ import { getDatabase, ref, onValue, update, get } from "https://www.gstatic.com/
   window.__rujukanTrackerFirebaseSave = () => requestSync();
 
   try {
+    // Gunakan konfigurasi proyek yang sama dengan index (2). Semua salinan Rujukan Tracker
+    // yang dipasang di Netlify/GitHub harus memakai DATA_PATH yang sama agar berbagi data.
+    // Tidak memakai layar/login anonim; akses tetap ditentukan oleh Firebase Realtime Database Rules.
     const existing=getApps().find(a=>a.name==='rujukan-tracker');
     const app=existing||initializeApp(config,'rujukan-tracker');
-    auth=getAuth(app);db=getDatabase(app);
-    onAuthStateChanged(auth,user=>{
-      if(user){
-        anonymousSignInInProgress=false;
-        startListener(user);
-      } else {
-        activeUser=null;ready=false;
-        if(stopListener){stopListener();stopListener=null;}
-        setStatus('Menghubungkan realtime…','wait');
-        if(!anonymousSignInInProgress){
-          anonymousSignInInProgress=true;
-          signInAnonymously(auth).catch(err=>{
-            anonymousSignInInProgress=false;
-            console.error('Firebase anonymous authentication:',err);
-            setStatus('Realtime gagal · aktifkan Anonymous Authentication','error');
-          });
-        }
-      }
-    });
+    db=getDatabase(app);
+    activeUser={sharedClient:true};
+    startListener(activeUser);
   } catch(err) {
     console.error('Firebase initialization:',err);
     setStatus('Firebase gagal dimulai','error');
