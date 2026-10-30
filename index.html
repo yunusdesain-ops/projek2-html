@@ -6,7 +6,7 @@
 <title>Rujukan Tracker — TAT Otomatis</title>
 <style>
 :root{--bg:#f4f6fa;--card:#fff;--ink:#172033;--muted:#667085;--line:#e5e9f0;--blue:#2359d5;--blue2:#eaf0ff;--red:#b42318;--redbg:#fff0ee;--green:#067647;--greenbg:#e7f8ef;--amber:#975a00;--amberbg:#fff4d6;--shadow:0 8px 28px rgba(25,40,70,.07)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:650}button:disabled{opacity:.5;cursor:wait}.btn-light{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn-danger{background:var(--red)}.wrap{max-width:1600px;width:calc(100% - 32px);margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:10px}.logo{width:40px;height:40px;border-radius:12px;background:var(--blue);color:white;display:grid;place-items:center;font-size:19px;font-weight:800}.brand h1{font-size:20px;margin:0;letter-spacing:-.4px}.sub{font-size:12px;color:var(--muted)}.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.hidden{display:none!important}.panel{background:var(--card);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);padding:18px}.upload{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.upload-left{display:flex;align-items:center;gap:13px}.upload-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:var(--blue2);font-size:20px;color:var(--blue)}.upload h2{margin:0;font-size:16px}.upload p{margin:3px 0 0;color:var(--muted);font-size:12px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:14px 0}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px}.stat .label{font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:25px;line-height:1.2;margin-top:6px;letter-spacing:-.7px}.stat.red strong{color:var(--red)}.stat.green strong{color:var(--green)}.toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:16px 0}.toolbar input,.toolbar select{padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:#fff;min-width:155px}.toolbar input[type=search]{flex:1;min-width:210px}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:13px;background:#fff}table{width:100%;border-collapse:collapse;min-width:1000px}th,td{text-align:left;padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f8f9fc;color:#586174;font-size:11px;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}td{font-size:13px}tbody tr:last-child td{border-bottom:0}.muted{color:var(--muted)}.pill{display:inline-flex;align-items:center;border-radius:100px;padding:4px 8px;font-size:11px;font-weight:750;white-space:nowrap}.p-wait{background:var(--amberbg);color:var(--amber)}.p-done{background:var(--blue2);color:#214fb5}.p-received{background:#eee8ff;color:#653cb3}.p-issued{background:var(--greenbg);color:var(--green)}.p-alert{background:var(--redbg);color:var(--red)}.batchtitle{font-weight:750}.empty{padding:34px;text-align:center;color:var(--muted)}.notice{margin-top:12px;font-size:13px;padding:11px 13px;border-radius:11px;background:#eef4ff;color:#204aa6;white-space:pre-wrap}.notice.bad{background:var(--redbg);color:var(--red)}.notice.good{background:var(--greenbg);color:var(--green)}.detailhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin:18px 0 12px}.detailhead h2{margin:0;font-size:17px}.detailmeta{font-size:12px;color:var(--muted);margin-top:4px}.detailtable{min-width:1050px}.detailtable select{max-width:190px;width:100%;padding:8px;border:1px solid var(--line);border-radius:9px;background:white}.timelines{font-size:11px;color:var(--muted);min-width:185px;line-height:1.6}.timelines b{color:#3f4755}.copycode{display:inline-block;padding:0;border:0;border-radius:5px;background:transparent;color:#2359d5;font:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}.copyhint{font-size:10px;color:var(--muted);margin-top:3px}.estimate-input{width:230px;max-width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;background:#fff;font:inherit;font-size:12px}.date-group-row td{background:#eef3ff;color:#234ca8;font-weight:800;border-bottom:1px solid #dce5fb}.schedule-line{font-size:11px;color:var(--muted);min-width:125px}.modal-backdrop{position:fixed;inset:0;background:rgba(16,24,40,.48);z-index:30;display:flex;align-items:center;justify-content:center;padding:16px}.modal-card{background:#fff;border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.22);padding:22px;width:min(450px,100%)}.modal-card h2{font-size:18px;margin:0 0 5px}.modal-card p{margin:0 0 18px;color:var(--muted);font-size:13px}.modal-card label{display:block;font-size:12px;font-weight:750;margin:13px 0 6px}.modal-card input{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;background:#fff}.modal-actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:20px}.file-manager-card{max-height:min(82vh,760px);overflow:auto}.source-pdf-list{display:grid;gap:9px;max-height:54vh;overflow:auto}.source-pdf-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px;border:1px solid var(--line);border-radius:12px}.source-pdf-info{min-width:0}.source-pdf-name{font-size:13px;font-weight:800;overflow-wrap:anywhere}.source-pdf-meta{font-size:11px;color:var(--muted);margin-top:4px}.source-pdf-row button{flex-shrink:0;background:#fff1f2!important;color:#be123c!important;border:1px solid #fecdd3!important;padding:8px 10px!important;font-size:11px!important}.batch-file-count{display:block;margin-top:4px;font-size:10px;color:var(--muted);font-weight:700}.estimate-late{display:block;margin-top:5px;color:var(--red);font-size:11px;font-weight:750}.donecheck{display:flex;align-items:center;gap:7px;font-weight:700;white-space:nowrap}.donecheck input{width:18px;height:18px;accent-color:var(--green);cursor:pointer}.donecheck input:disabled{cursor:not-allowed}.detailtable td:nth-child(5),.detailtable td:nth-child(6),.pendingtable td:nth-child(6),.pendingtable td:nth-child(7){min-width:82px}.detailtable .donecheck,.pendingtable .donecheck{gap:6px}.row-late{background:#fff9f8}.toast{position:fixed;right:20px;bottom:20px;max-width:min(430px,calc(100vw - 40px));padding:13px 16px;border-radius:12px;background:#172033;color:#fff;box-shadow:var(--shadow);z-index:20}.footnote{font-size:11px;color:var(--muted);margin-top:14px}.spin{display:inline-block;width:13px;height:13px;border:2px solid #ffffff80;border-top-color:#fff;border-radius:50%;animation:s .7s linear infinite;vertical-align:-2px;margin-right:6px}@keyframes s{to{transform:rotate(360deg)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:650}button:disabled{opacity:.5;cursor:wait}.btn-light{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn-danger{background:var(--red)}.wrap{max-width:1600px;width:calc(100% - 32px);margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:10px}.logo{width:40px;height:40px;border-radius:12px;background:var(--blue);color:white;display:grid;place-items:center;font-size:19px;font-weight:800}.brand h1{font-size:20px;margin:0;letter-spacing:-.4px}.sub{font-size:12px;color:var(--muted)}.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.hidden{display:none!important}.panel{background:var(--card);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);padding:18px}.upload{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.upload-left{display:flex;align-items:center;gap:13px}.upload-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:var(--blue2);font-size:20px;color:var(--blue)}.upload h2{margin:0;font-size:16px}.upload p{margin:3px 0 0;color:var(--muted);font-size:12px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:14px 0}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px}.stat .label{font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:25px;line-height:1.2;margin-top:6px;letter-spacing:-.7px}.stat.red strong{color:var(--red)}.stat.green strong{color:var(--green)}.toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:16px 0}.toolbar input,.toolbar select{padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:#fff;min-width:155px}.toolbar input[type=search]{flex:1;min-width:210px}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:13px;background:#fff}table{width:100%;border-collapse:collapse;min-width:1000px}th,td{text-align:left;padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f8f9fc;color:#586174;font-size:11px;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}td{font-size:13px}tbody tr:last-child td{border-bottom:0}.muted{color:var(--muted)}.pill{display:inline-flex;align-items:center;border-radius:100px;padding:4px 8px;font-size:11px;font-weight:750;white-space:nowrap}.p-wait{background:var(--amberbg);color:var(--amber)}.p-done{background:var(--blue2);color:#214fb5}.p-received{background:#eee8ff;color:#653cb3}.p-issued{background:var(--greenbg);color:var(--green)}.p-alert{background:var(--redbg);color:var(--red)}.batchtitle{font-weight:750}.empty{padding:34px;text-align:center;color:var(--muted)}.notice{margin-top:12px;font-size:13px;padding:11px 13px;border-radius:11px;background:#eef4ff;color:#204aa6;white-space:pre-wrap}.notice.bad{background:var(--redbg);color:var(--red)}.notice.good{background:var(--greenbg);color:var(--green)}.detailhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin:18px 0 12px}.detailhead h2{margin:0;font-size:17px}.detailmeta{font-size:12px;color:var(--muted);margin-top:4px}.detailtable{min-width:1050px}.detailtable select{max-width:190px;width:100%;padding:8px;border:1px solid var(--line);border-radius:9px;background:white}.timelines{font-size:11px;color:var(--muted);min-width:185px;line-height:1.6}.timelines b{color:#3f4755}.copycode{display:inline-block;padding:0;border:0;border-radius:5px;background:transparent;color:#2359d5;font:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}.copyhint{font-size:10px;color:var(--muted);margin-top:3px}.estimate-input{width:230px;max-width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;background:#fff;font:inherit;font-size:12px}.date-group-row td{background:#eef3ff;color:#234ca8;font-weight:800;border-bottom:1px solid #dce5fb}.schedule-line{font-size:11px;color:var(--muted);min-width:125px}.modal-backdrop{position:fixed;inset:0;background:rgba(16,24,40,.48);z-index:30;display:flex;align-items:center;justify-content:center;padding:16px}.modal-card{background:#fff;border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.22);padding:22px;width:min(450px,100%)}.modal-card h2{font-size:18px;margin:0 0 5px}.modal-card p{margin:0 0 18px;color:var(--muted);font-size:13px}.modal-card label{display:block;font-size:12px;font-weight:750;margin:13px 0 6px}.modal-card input{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;background:#fff}.modal-actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:20px}.file-manager-card{max-height:min(82vh,760px);overflow:auto}.source-pdf-list{display:grid;gap:9px;max-height:54vh;overflow:auto}.source-pdf-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px;border:1px solid var(--line);border-radius:12px}.source-pdf-info{min-width:0}.source-pdf-name{font-size:13px;font-weight:800;overflow-wrap:anywhere}.source-pdf-meta{font-size:11px;color:var(--muted);margin-top:4px}.source-pdf-row button{flex-shrink:0;background:#fff1f2!important;color:#be123c!important;border:1px solid #fecdd3!important;padding:8px 10px!important;font-size:11px!important}.batch-file-count{display:block;margin-top:4px;font-size:10px;color:var(--muted);font-weight:700}.estimate-late{display:block;margin-top:5px;color:var(--red);font-size:11px;font-weight:750}.donecheck{display:flex;align-items:center;gap:7px;font-weight:700;white-space:nowrap}.donecheck input{position:relative;z-index:2;pointer-events:auto;touch-action:manipulation;width:20px;height:20px;min-width:20px;accent-color:var(--green);cursor:pointer}.donecheck input:disabled{cursor:not-allowed}.detailtable td:nth-child(5),.detailtable td:nth-child(6),.pendingtable td:nth-child(6),.pendingtable td:nth-child(7){min-width:82px}.detailtable .donecheck,.pendingtable .donecheck{gap:6px}.row-late{background:#fff9f8}.toast{position:fixed;right:20px;bottom:20px;max-width:min(430px,calc(100vw - 40px));padding:13px 16px;border-radius:12px;background:#172033;color:#fff;box-shadow:var(--shadow);z-index:20}.footnote{font-size:11px;color:var(--muted);margin-top:14px}.spin{display:inline-block;width:13px;height:13px;border:2px solid #ffffff80;border-top-color:#fff;border-radius:50%;animation:s .7s linear infinite;vertical-align:-2px;margin-right:6px}@keyframes s{to{transform:rotate(360deg)}}
 @media(max-width:720px){.wrap{padding:13px}.top{align-items:flex-start}.brand h1{font-size:17px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.stat{padding:12px}.stat strong{font-size:22px}.panel{padding:14px}.upload{align-items:flex-start}.toolbar>*{width:100%;min-width:0!important}.top-actions button{padding:9px 10px}}
 .upload{transition:border-color .15s,background .15s}.upload.dragover{border:2px dashed var(--blue);background:#f1f6ff}.drop-caption{font-size:11px!important;color:var(--blue)!important;margin-top:5px!important}.estimate-hint{font-size:10px;color:var(--muted);margin-top:4px;max-width:240px;line-height:1.35}.estimate-hint.warn{color:var(--amber)}
 
@@ -233,7 +233,7 @@
     </div>
     <div class="tablewrap"><table><thead><tr><th>Upload</th><th>Tanggal FPPR</th><th>Tujuan PRN</th><th>Tes</th><th>Belum selesai</th><th>Kirim (WITA)</th><th>Tiba PRN (WITA)</th><th>Tindakan</th></tr></thead><tbody id="batchRows"></tbody></table><div id="emptyState" class="empty">Belum ada data.</div></div>
     <section id="detailSection" class="hidden">
-      <div class="detailhead"><div><h2 id="detailTitle">Rincian batch</h2><div id="detailMeta" class="detailmeta"></div><div id="sentState" class="detailmeta"></div></div><div class="top-actions"><button id="showAllTestsBtn" class="btn-light hidden" type="button">Tampilkan semua tes</button><button id="editScheduleBtn" type="button">Atur jadwal kirim</button><button id="closeDetailBtn" class="btn-light" type="button">Tutup</button></div></div>
+      <div class="detailhead"><div><h2 id="detailTitle">Rincian batch</h2><div id="detailMeta" class="detailmeta"></div><div id="sentState" class="detailmeta"></div></div><div class="top-actions"><button id="showAllTestsBtn" class="btn-light hidden" type="button">Tampilkan semua tes (termasuk selesai)</button><button id="editScheduleBtn" type="button">Atur jadwal kirim</button><button id="closeDetailBtn" class="btn-light" type="button">Tutup</button></div></div>
       <div class="tablewrap"><table class="detailtable"><thead><tr><th>Pasien / Episode</th><th>Specimen No.</th><th>Parameter</th><th>Estimasi selesai (WITA)</th><th>Staff</th><th>QV</th><th>Waktu selesai (WITA)</th></tr></thead><tbody id="detailRows"></tbody></table><div id="detailEmpty" class="empty hidden">Tidak ada pemeriksaan yang terbaca.</div></div>
     </section>
   </main>
@@ -276,7 +276,7 @@ const $=id=>document.getElementById(id);
 const STORAGE_KEY='rujukanTrackerLocalPreviewV1';
 let batches=[],items=[],tatAliases={},selectedBatchId=null,pdfBusy=false,aliasTargetItemId=null;
 let applyingFirebaseRemote=false;
-let unfinishedView=false,pendingSortAsc=true,detailUnfinishedOnly=false,focusDetailItemId=null;
+let unfinishedView=false,pendingSortAsc=true,detailUnfinishedOnly=false,focusDetailItemId=null,reviewCellSeq=0;
 
 const TAT_DAY_INDEX = {minggu:0, senin:1, selasa:2, rabu:3, kamis:4, jumat:5, sabtu:6};
 const TAT_DAY_LABELS = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
@@ -934,7 +934,7 @@ async function uploadPdfs(fileList){
   renderAll();
   const added=results.filter(x=>x.filesAdded>0);
   if(results.length===1){
-   const r=results[0];selectedBatchId=r.batchId;detailUnfinishedOnly=false;renderAll();renderDetail();
+   const r=results[0];selectedBatchId=r.batchId;detailUnfinishedOnly=true;renderAll();renderDetail();
    const dateText=dateDisplay(r.fpprDate);
    const msg=`Terekam ${r.filesAdded} PDF${r.filesDuplicate?` · ${r.filesDuplicate} duplikat dilewati`:''} menjadi 1 batch tanggal ${dateText} · ${r.totalTests} tes. Isi satu jadwal kirim dan tiba untuk seluruh batch.`;
    setNotice(msg,failed.length?'bad':'good');
@@ -965,12 +965,12 @@ dropZone.addEventListener('dragend',e=>{e.preventDefault();dragDepth=0;dropZone.
 dropZone.addEventListener('drop',e=>{e.preventDefault();e.stopPropagation();dragDepth=0;dropZone.classList.remove('dragover');const files=Array.from(e.dataTransfer?.files||[]);const pdfs=files.filter(f=>f.type==='application/pdf'||/\.pdf$/i.test(f.name));if(!pdfs.length){toast('Tarik file PDF saja.',true);return}uploadPdfs(pdfs)});
 dropZone.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('pdfInput').click()}});
 function batchItems(id){return items.filter(x=>x.batchId===id)}
-function completedCount(id){return batchItems(id).filter(x=>!!x.completedAt).length}
+function completedCount(id){return batchItems(id).filter(isReviewComplete).length}
 function renderDueSoon(){
  const now=Date.now(),redEnd=now+60*60*1000,greenEnd=now+120*60*1000;
  const watch=items.filter(it=>{
   if(!batches.some(b=>String(b.id)===String(it.batchId)))return false;
-  if(it.completedAt)return false;
+  if(isReviewComplete(it))return false;
   const t=estimateSortTimestamp(it.estimatedFinishAt);
   return Number.isFinite(t)&&t<=greenEnd;
  }).sort((a,b)=>estimateSortTimestamp(a.estimatedFinishAt)-estimateSortTimestamp(b.estimatedFinishAt));
@@ -992,7 +992,7 @@ function renderDueSoon(){
   copy.append(episode,test);card.appendChild(copy);
   const open=()=>{
    if(!b.id)return;
-   selectedBatchId=b.id;detailUnfinishedOnly=false;focusDetailItemId=it.id;
+   selectedBatchId=b.id;detailUnfinishedOnly=true;focusDetailItemId=it.id;
    renderDetail();
    $('detailSection').scrollIntoView({behavior:'smooth',block:'start'});
    window.setTimeout(()=>focusDetailRow(it.id),140);
@@ -1052,45 +1052,74 @@ function deleteSourcePdf(batchId,sourceFileId){
 $('closeFileManagerBtn').addEventListener('click',()=>show('fileManagerModal',false));
 function renderAll(){
  $('statTotalTests').textContent=items.length;
- $('statUnfinished').textContent=items.filter(i=>!i.completedAt).length;
- $('statCompleted').textContent=items.filter(i=>!!i.completedAt).length;
+ $('statUnfinished').textContent=items.filter(i=>!isReviewComplete(i)).length;
+ $('statCompleted').textContent=items.filter(isReviewComplete).length;
  $('statBatch').textContent=batches.length;
  const term=$('searchInput').value.trim().toLowerCase(),date=$('dateFilter').value;
  const filtered=batches.filter(b=>{if(date&&b.fpprDate!==date)return false;const its=batchItems(b.id);const hay=[b.destination,b.fpprDate,b.uploadDate,...(b.sourceFiles||[]).map(f=>f.fileName),...its.flatMap(i=>[i.patientName,i.episode,i.specimen,i.parameter])].join(' ').toLowerCase();return !term||hay.includes(term)}).sort((a,b)=>(a.fpprDate||'').localeCompare(b.fpprDate||'')||(a.session||'').localeCompare(b.session||'')||(a.createdAt||'').localeCompare(b.createdAt||''));
  const tbody=$('batchRows');tbody.innerHTML='';let lastDate=null;
- filtered.forEach(b=>{if((b.fpprDate||'—')!==lastDate){lastDate=b.fpprDate||'—';const group=document.createElement('tr');group.className='date-group-row';const td=document.createElement('td');td.colSpan=8;td.textContent='Tanggal FPPR: '+dateDisplay(lastDate);group.appendChild(td);tbody.appendChild(group)}const its=batchItems(b.id);const unfinished=its.filter(i=>!i.completedAt).length;const tr=document.createElement('tr');const cells=[dateDisplay(b.uploadDate),dateDisplay(b.fpprDate),b.destination||'—',String(its.length),String(unfinished),dtDisplay(b.sendAt),dtDisplay(b.arrivalEstimateAt)];cells.forEach((v,idx)=>{const td=document.createElement('td');td.textContent=v;if(idx===2){td.className='batchtitle';td.style.whiteSpace='pre-line';const count=document.createElement('small');count.className='batch-file-count';count.textContent=(b.sourceFiles?.length||b.fileCount||1)+' PDF · 1 batch';td.appendChild(count)}if(idx===4&&Number(v)>0){const pill=document.createElement('span');pill.className='pill p-alert';pill.textContent=v+' belum selesai';td.textContent='';td.appendChild(pill)}if(idx>=5)td.className='schedule-line';tr.appendChild(td)});const td=document.createElement('td');td.className='batch-action-cell';const actions=document.createElement('div');actions.className='batch-action-group';const btn=document.createElement('button');btn.type='button';btn.textContent='Buka';btn.addEventListener('click',()=>{selectedBatchId=b.id;detailUnfinishedOnly=false;renderDetail();$('detailSection').scrollIntoView({behavior:'smooth',block:'start'})});const delBtn=document.createElement('button');delBtn.type='button';delBtn.textContent='Kelola PDF';delBtn.className='delete-batch-btn';delBtn.title='Lihat atau hapus satu PDF dari batch tanggal ini';delBtn.setAttribute('aria-label','Kelola PDF tanggal '+(b.fpprDate||''));delBtn.addEventListener('click',()=>openBatchFileManager(b.id));actions.append(btn,delBtn);td.appendChild(actions);tr.appendChild(td);tbody.appendChild(tr)});show('emptyState',filtered.length===0);if(filtered.length===0)$('emptyState').textContent='Tidak ada data untuk tanggal/pencarian ini. Upload PDF FPPR untuk mulai.';if(selectedBatchId&&!batches.some(b=>b.id===selectedBatchId)){selectedBatchId=null;show('detailSection',false)}if(selectedBatchId)renderDetail();if(unfinishedView)renderUnfinishedList();renderDueSoon();}
+ filtered.forEach(b=>{if((b.fpprDate||'—')!==lastDate){lastDate=b.fpprDate||'—';const group=document.createElement('tr');group.className='date-group-row';const td=document.createElement('td');td.colSpan=8;td.textContent='Tanggal FPPR: '+dateDisplay(lastDate);group.appendChild(td);tbody.appendChild(group)}const its=batchItems(b.id);const unfinished=its.filter(i=>!isReviewComplete(i)).length;const tr=document.createElement('tr');const cells=[dateDisplay(b.uploadDate),dateDisplay(b.fpprDate),b.destination||'—',String(its.length),String(unfinished),dtDisplay(b.sendAt),dtDisplay(b.arrivalEstimateAt)];cells.forEach((v,idx)=>{const td=document.createElement('td');td.textContent=v;if(idx===2){td.className='batchtitle';td.style.whiteSpace='pre-line';const count=document.createElement('small');count.className='batch-file-count';count.textContent=(b.sourceFiles?.length||b.fileCount||1)+' PDF · 1 batch';td.appendChild(count)}if(idx===4&&Number(v)>0){const pill=document.createElement('span');pill.className='pill p-alert';pill.textContent=v+' belum selesai';td.textContent='';td.appendChild(pill)}if(idx>=5)td.className='schedule-line';tr.appendChild(td)});const td=document.createElement('td');td.className='batch-action-cell';const actions=document.createElement('div');actions.className='batch-action-group';const btn=document.createElement('button');btn.type='button';btn.textContent='Buka';btn.addEventListener('click',()=>{selectedBatchId=b.id;detailUnfinishedOnly=true;renderDetail();$('detailSection').scrollIntoView({behavior:'smooth',block:'start'})});const delBtn=document.createElement('button');delBtn.type='button';delBtn.textContent='Kelola PDF';delBtn.className='delete-batch-btn';delBtn.title='Lihat atau hapus satu PDF dari batch tanggal ini';delBtn.setAttribute('aria-label','Kelola PDF tanggal '+(b.fpprDate||''));delBtn.addEventListener('click',()=>openBatchFileManager(b.id));actions.append(btn,delBtn);td.appendChild(actions);tr.appendChild(td);tbody.appendChild(tr)});show('emptyState',filtered.length===0);if(filtered.length===0)$('emptyState').textContent='Tidak ada data untuk tanggal/pencarian ini. Upload PDF FPPR untuk mulai.';if(selectedBatchId&&!batches.some(b=>b.id===selectedBatchId)){selectedBatchId=null;show('detailSection',false)}if(selectedBatchId)renderDetail();if(unfinishedView)renderUnfinishedList();renderDueSoon();}
 function estimateSortTimestamp(value){const s=String(value||'').trim();if(!s||/^Perlu /i.test(s))return Number.POSITIVE_INFINITY;const months={jan:0,feb:1,mar:2,apr:3,mei:4,jun:5,jul:6,agu:7,sep:8,okt:9,nov:10,des:11};let m=s.match(/^(\d{1,2})\s+(Jan|Feb|Mar|Apr|Mei|Jun|Jul|Agu|Sep|Okt|Nov|Des)\s+(\d{4})(?:\s*,?\s*(\d{1,2})[.:](\d{2}))?/i);if(m)return Date.UTC(Number(m[3]),months[m[2].toLowerCase()],Number(m[1]),Number(m[4]||0)-8,Number(m[5]||0));m=s.match(/^(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2}))?/);if(m)return Date.UTC(Number(m[1]),Number(m[2])-1,Number(m[3]),Number(m[4]||0)-8,Number(m[5]||0));m=s.match(/^(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})(?:\s*,?\s*(\d{1,2})[:.](\d{2}))?/);if(m)return Date.UTC(Number(m[3]),Number(m[2])-1,Number(m[1]),Number(m[4]||0)-8,Number(m[5]||0));return Number.POSITIVE_INFINITY}
 function reviewCheckValue(it, role){
  const key=role==='staff'?'staffChecked':'qvChecked';
- // Data lama yang sudah ditandai selesai dianggap selesai oleh kedua pihak.
- return typeof it[key]==='boolean'?it[key]:!!it.completedAt;
+ // Jika salah satu checklist sudah memiliki status eksplisit, kedua pihak
+ // harus dibaca dari checklist masing-masing (bukan dari completedAt lama).
+ const hasExplicitChecks=typeof it.staffChecked==='boolean'||typeof it.qvChecked==='boolean';
+ if(hasExplicitChecks)return it[key]===true;
+ // Kompatibilitas untuk rekaman lama sebelum checklist Staff/QV ditambahkan.
+ return !!it.completedAt;
 }
-function setReviewCheck(it, role, checked){
+function isReviewComplete(it){
+ return reviewCheckValue(it,'staff')&&reviewCheckValue(it,'qv');
+}
+function setReviewCheck(itemId, role, checked){
+ // Selalu ambil ulang objek dari array utama. Jangan bergantung pada referensi
+ // baris tabel yang mungkin sudah diganti oleh pembaruan realtime Firebase.
+ const it=items.find(row=>String(row.id)===String(itemId));
+ if(!it){toast('Data tes sudah berubah. Muat ulang daftar tes.',true);requestAnimationFrame(renderAll);return}
  // Migrasi data lama sebelum mengubah salah satu kotak agar status pihak lain tetap terjaga.
- if(typeof it.staffChecked!=='boolean')it.staffChecked=!!it.completedAt;
- if(typeof it.qvChecked!=='boolean')it.qvChecked=!!it.completedAt;
- if(role==='staff')it.staffChecked=!!checked;else it.qvChecked=!!checked;
+ const hasAnyExplicitCheck=typeof it.staffChecked==='boolean'||typeof it.qvChecked==='boolean';
+ if(!hasAnyExplicitCheck){it.staffChecked=!!it.completedAt;it.qvChecked=!!it.completedAt;}
+ else{
+  if(typeof it.staffChecked!=='boolean')it.staffChecked=!!it.completedAt;
+  if(typeof it.qvChecked!=='boolean')it.qvChecked=!!it.completedAt;
+ }
  const stamp=nowIso();
- if(it.staffChecked&&it.qvChecked)it.completedAt=it.completedAt||stamp;
+ if(role==='staff'){
+  it.staffChecked=!!checked;
+  it.staffCheckedAt=checked?stamp:null;
+  it.staffCheckUpdatedAt=stamp;
+ }else{
+  it.qvChecked=!!checked;
+  it.qvCheckedAt=checked?stamp:null;
+  it.qvCheckUpdatedAt=stamp;
+ }
+ if(isReviewComplete(it))it.completedAt=it.completedAt||stamp;
  else it.completedAt=null;
- if(role==='staff')it.staffCheckedAt=checked?stamp:null;else it.qvCheckedAt=checked?stamp:null;
  it.updatedAt=stamp;it.updatedBy='Checklist Staff/QV';
- saveLocal();renderAll();
- if(selectedBatchId)renderDetail();
+ saveLocal();
+ // Render setelah event klik/change selesai agar input yang sedang diklik tidak
+ // dihancurkan di tengah event. Ini juga langsung menghapus tes yang sudah lengkap.
+ requestAnimationFrame(()=>renderAll());
  toast(it.staffChecked&&it.qvChecked?'Staff dan QV sudah lengkap. Tes dihapus dari filter belum selesai.':(role==='staff'?'Checklist Staff diperbarui.':'Checklist QV diperbarui.'));
 }
 function createReviewCheckCell(it, role, labelText){
  const td=document.createElement('td');
- const label=document.createElement('label');label.className='donecheck';
+ const wrap=document.createElement('div');wrap.className='donecheck';
  const check=document.createElement('input');check.type='checkbox';check.checked=reviewCheckValue(it,role);
+ check.id='review-check-'+(++reviewCellSeq);
+ check.dataset.itemId=String(it.id);check.dataset.reviewRole=role;
  check.title='Centang jika '+labelText+' sudah selesai';
  check.setAttribute('aria-label','Tandai '+labelText+': '+(it.parameter||'tes')+' — '+(it.patientName||''));
- const text=document.createElement('span');text.textContent=labelText;
- label.append(check,text);check.addEventListener('change',()=>setReviewCheck(it,role,check.checked));
- td.appendChild(label);return td;
+ const text=document.createElement('label');text.htmlFor=check.id;text.textContent=labelText;
+ check.addEventListener('change',event=>{
+  event.stopPropagation();
+  setReviewCheck(check.dataset.itemId,check.dataset.reviewRole,check.checked);
+ });
+ wrap.append(check,text);td.appendChild(wrap);return td;
 }
 function renderUnfinishedList(){
- const pending=items.filter(it=>!it.completedAt).slice().sort((a,b)=>{
+ const pending=items.filter(it=>!isReviewComplete(it)).slice().sort((a,b)=>{
   const at=estimateSortTimestamp(a.estimatedFinishAt),bt=estimateSortTimestamp(b.estimatedFinishAt);
   if(Number.isFinite(at)!==Number.isFinite(bt))return Number.isFinite(at)?-1:1;
   if(Number.isFinite(at)&&at!==bt)return pendingSortAsc?at-bt:bt-at;
@@ -1163,8 +1192,8 @@ $('aliasSearchInput').addEventListener('input',aliasSearchRender);$('cancelAlias
 function copyValue(value,label){if(!value||value==='—'){toast(label+' tidak tersedia.',true);return}const done=()=>toast(label+' disalin.');if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(value).then(done).catch(()=>fallbackCopy(value,done))}else fallbackCopy(value,done)}
 function fallbackCopy(value,done){const ta=document.createElement('textarea');ta.value=value;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{const ok=document.execCommand('copy');if(ok)done();else toast('Tidak dapat menyalin otomatis. Pilih dan salin teksnya.',true)}catch{toast('Tidak dapat menyalin otomatis. Pilih dan salin teksnya.',true)}ta.remove()}
 function compactEstimateLabel(it){const value=String(it.estimatedFinishAt||'');if(it.estimateSource==='manual')return 'Manual';if(!value||/^Perlu isi estimasi tiba PRN/i.test(value))return 'Isi tiba PRN';if(/^Perlu konfirmasi/i.test(value))return 'Perlu konfirmasi';if(it.tatMatchName==='Napza Kuantitatif Urine & Serum')return 'Otomatis · External Rev.14';return it.estimateSource==='auto'?'Otomatis':'Estimasi';}
-function renderDetail(){const b=batches.find(x=>x.id===selectedBatchId);if(!b){show('detailSection',false);return}show('detailSection',true);const allInBatch=batchItems(b.id);$('detailTitle').textContent='Rincian pemeriksaan';$('detailMeta').textContent=`FPPR ${dateDisplay(b.fpprDate)} · Upload ${dateDisplay(b.uploadDate)} · ${(b.sourceFiles?.length||b.fileCount||1)} PDF digabung · ${b.destination||'—'} · ${detailUnfinishedOnly?allInBatch.filter(i=>!i.completedAt).length+' belum selesai':allInBatch.length+' tes'}`;$('sentState').textContent=`Jadwal kirim: ${dtDisplay(b.sendAt)} · Estimasi tiba PRN: ${dtDisplay(b.arrivalEstimateAt)}`;show('showAllTestsBtn',detailUnfinishedOnly);
- const list=allInBatch.filter(it=>!detailUnfinishedOnly||!it.completedAt).sort((a,b)=>{if(detailUnfinishedOnly){const at=estimateSortTimestamp(a.estimatedFinishAt),bt=estimateSortTimestamp(b.estimatedFinishAt);if(Number.isFinite(at)!==Number.isFinite(bt))return Number.isFinite(at)?-1:1;if(Number.isFinite(at)&&at!==bt)return at-bt}return (a.patientName||'').localeCompare(b.patientName||'')||(a.specimen||'').localeCompare(b.specimen||'')});const tb=$('detailRows');tb.innerHTML='';list.forEach(it=>{const tr=document.createElement('tr');tr.dataset.itemId=String(it.id||'');if(focusDetailItemId&&String(it.id)===String(focusDetailItemId))tr.classList.add('focus-patient-row');
+function renderDetail(){const b=batches.find(x=>x.id===selectedBatchId);if(!b){show('detailSection',false);return}show('detailSection',true);const allInBatch=batchItems(b.id);$('detailTitle').textContent='Rincian pemeriksaan';$('detailMeta').textContent=`FPPR ${dateDisplay(b.fpprDate)} · Upload ${dateDisplay(b.uploadDate)} · ${(b.sourceFiles?.length||b.fileCount||1)} PDF digabung · ${b.destination||'—'} · ${detailUnfinishedOnly?allInBatch.filter(i=>!isReviewComplete(i)).length+' belum selesai':allInBatch.length+' tes'}`;$('sentState').textContent=`Jadwal kirim: ${dtDisplay(b.sendAt)} · Estimasi tiba PRN: ${dtDisplay(b.arrivalEstimateAt)}`;show('showAllTestsBtn',detailUnfinishedOnly);
+ const list=allInBatch.filter(it=>!detailUnfinishedOnly||!isReviewComplete(it)).sort((a,b)=>{if(detailUnfinishedOnly){const at=estimateSortTimestamp(a.estimatedFinishAt),bt=estimateSortTimestamp(b.estimatedFinishAt);if(Number.isFinite(at)!==Number.isFinite(bt))return Number.isFinite(at)?-1:1;if(Number.isFinite(at)&&at!==bt)return at-bt}return (a.patientName||'').localeCompare(b.patientName||'')||(a.specimen||'').localeCompare(b.specimen||'')});const tb=$('detailRows');tb.innerHTML='';list.forEach(it=>{const tr=document.createElement('tr');tr.dataset.itemId=String(it.id||'');if(focusDetailItemId&&String(it.id)===String(focusDetailItemId))tr.classList.add('focus-patient-row');
  const name=document.createElement('td');const nm=document.createElement('div');nm.className='batchtitle';nm.textContent=it.patientName||'—';const epWrap=document.createElement('div');const ep=document.createElement('button');ep.type='button';ep.className='copycode';ep.textContent=it.episode||'—';ep.title='Klik untuk menyalin Episode No.';ep.addEventListener('click',()=>copyValue(it.episode,'Episode No.'));epWrap.append(ep);name.append(nm,epWrap);tr.appendChild(name);
  const spec=document.createElement('td');const specBtn=document.createElement('button');specBtn.type='button';specBtn.className='copycode';specBtn.textContent=it.specimen||'—';specBtn.title='Klik untuk menyalin Specimen No.';specBtn.addEventListener('click',()=>copyValue(it.specimen,'Specimen No.'));spec.append(specBtn);tr.appendChild(spec);
  const par=document.createElement('td');par.textContent=it.parameter||'—';tr.appendChild(par);
@@ -1190,10 +1219,42 @@ window.__rujukanTrackerGetState=function(){return {batches:JSON.parse(JSON.strin
 window.__rujukanTrackerApplyFirebaseState=function(state){
   if(!state||!Array.isArray(state.batches)||!Array.isArray(state.items))return;
   const keepBatch=selectedBatchId;
+  // Simpan checklist lokal sebelum snapshot realtime mengganti array items.
+  // Status Staff dan QV digabung per-kolom berdasarkan waktu perubahan masing-masing,
+  // sehingga snapshot Firebase yang lebih lama tidak membatalkan centang terbaru.
+  const localReviewSnapshot=new Map(items.map(it=>[String(it.id),it]));
   applyingFirebaseRemote=true;
   batches=state.batches;
   const validBatchIds=new Set(batches.map(b=>String(b.id)));
-  items=state.items.filter(it=>it && it.batchId && validBatchIds.has(String(it.batchId)));
+  items=state.items.filter(it=>it && it.batchId && validBatchIds.has(String(it.batchId))).map(remoteItem=>{
+    const localItem=localReviewSnapshot.get(String(remoteItem.id));
+    if(!localItem)return remoteItem;
+    const mergedItem={...remoteItem};
+    for(const role of ['staff','qv']){
+      const checkedField=role==='staff'?'staffChecked':'qvChecked';
+      const timeField=role==='staff'?'staffCheckUpdatedAt':'qvCheckUpdatedAt';
+      const checkedAtField=role==='staff'?'staffCheckedAt':'qvCheckedAt';
+      const localTime=Date.parse(localItem[timeField]||'')||0;
+      const remoteTime=Date.parse(remoteItem[timeField]||'')||0;
+      const localExplicit=typeof localItem[checkedField]==='boolean';
+      const remoteExplicit=typeof remoteItem[checkedField]==='boolean';
+      if(localExplicit&&(!remoteExplicit||localTime>remoteTime)){
+        mergedItem[checkedField]=localItem[checkedField];
+        if(localItem[timeField]!==undefined)mergedItem[timeField]=localItem[timeField];
+        if(localItem[checkedAtField]!==undefined)mergedItem[checkedAtField]=localItem[checkedAtField];
+        else delete mergedItem[checkedAtField];
+      }
+    }
+    // completedAt selalu diturunkan dari dua checklist, bukan dari snapshot lama.
+    if(typeof mergedItem.staffChecked==='boolean'||typeof mergedItem.qvChecked==='boolean'){
+      if(typeof mergedItem.staffChecked!=='boolean')mergedItem.staffChecked=!!localItem.completedAt;
+      if(typeof mergedItem.qvChecked!=='boolean')mergedItem.qvChecked=!!localItem.completedAt;
+      mergedItem.completedAt=mergedItem.staffChecked&&mergedItem.qvChecked
+        ?(mergedItem.completedAt||localItem.completedAt||mergedItem.staffCheckUpdatedAt||mergedItem.qvCheckUpdatedAt||mergedItem.updatedAt||localItem.updatedAt||nowIso())
+        :null;
+    }
+    return mergedItem;
+  });
   normalizeAndConsolidateBatchesByDate();
   tatAliases=state.tatAliases&&typeof state.tatAliases==='object'&&!Array.isArray(state.tatAliases)?state.tatAliases:{};
   const legacyAutoBatchIds=new Set(items.filter(it=>it.estimateSource==='auto' && /\bWIB\b/i.test(String(it.estimatedFinishAt||''))).map(it=>it.batchId));
@@ -1366,20 +1427,27 @@ import { getDatabase, ref, onValue, update, get } from "https://www.gstatic.com/
         // Ini mencegah centang Staff tertimpa ketika QV mencentang dari browser lain (dan sebaliknya).
         if(kind==='items' && b && r && l && chosen){
           chosen={...chosen};
-          for(const field of ['staffChecked','qvChecked','staffCheckedAt','qvCheckedAt']){
+          for(const field of ['staffChecked','qvChecked','staffCheckedAt','qvCheckedAt','staffCheckUpdatedAt','qvCheckUpdatedAt']){
             const baseValue=b[field]??null, remoteValue=r[field]??null, localValue=l[field]??null;
             const remoteFieldChanged=stable(remoteValue)!==stable(baseValue);
             const localFieldChanged=stable(localValue)!==stable(baseValue);
             let value=chosen[field];
             if(remoteFieldChanged&&!localFieldChanged)value=remoteValue;
             else if(localFieldChanged&&!remoteFieldChanged)value=localValue;
-            else if(remoteFieldChanged&&localFieldChanged)value=timestamp(l,kind)>timestamp(r,kind)?localValue:remoteValue;
+            else if(remoteFieldChanged&&localFieldChanged){
+              const role=field.startsWith('staff')?'staff':'qv';
+              const fieldTime=role==='staff'?'staffCheckUpdatedAt':'qvCheckUpdatedAt';
+              const rt=Date.parse(r[fieldTime]||'')||timestamp(r,kind);
+              const lt=Date.parse(l[fieldTime]||'')||timestamp(l,kind);
+              value=lt>rt?localValue:remoteValue;
+            }
             if(value===null||value===undefined)delete chosen[field];else chosen[field]=value;
           }
           if(typeof chosen.staffChecked==='boolean'||typeof chosen.qvChecked==='boolean'){
             if(typeof chosen.staffChecked!=='boolean')chosen.staffChecked=!!b.completedAt;
             if(typeof chosen.qvChecked!=='boolean')chosen.qvChecked=!!b.completedAt;
-            if(chosen.staffChecked&&chosen.qvChecked)chosen.completedAt=chosen.completedAt||r.completedAt||l.completedAt||chosen.updatedAt||nowIso();
+            // completedAt hanya penanda turunan: aktif hanya jika Staff DAN QV benar.
+            if(chosen.staffChecked===true&&chosen.qvChecked===true)chosen.completedAt=chosen.completedAt||r.completedAt||l.completedAt||chosen.updatedAt||nowIso();
             else chosen.completedAt=null;
           }
         }
