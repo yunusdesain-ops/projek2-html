@@ -194,6 +194,104 @@
 @media(max-width:720px){.batch-action-cell{min-width:145px}}
 </style>
 
+
+<style id="compact-header-and-two-column-warning-v31">
+/* Compact header filters: retain the original compact dashboard layout. */
+/* Header dan dashboard kembali mengikuti susunan ringkas versi awal. */
+/* Clear explanatory text under warning title; preserve the element for script compatibility. */
+#dueSoonMeta{display:none!important}
+#dueSoonPanel.attention-panel{display:grid!important;grid-template-columns:minmax(170px,205px) minmax(0,1fr)!important;align-items:stretch!important;background:#fff!important;border:1px solid #e5edf7!important;box-shadow:0 5px 18px rgba(34,65,115,.045)!important;padding:10px!important;column-gap:10px!important}
+#dueSoonPanel .warning-head{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:12px!important;padding:5px 8px!important;border-right:1px solid #e9eef6!important;margin:0!important}
+#dueSoonPanel .warning-title-wrap h2{color:#1b3156!important;font-size:15px!important;margin:0!important}
+#dueSoonPanel .warning-live-dot{width:9px!important;height:9px!important;flex-basis:9px!important}
+#dueSoonPanel .attention-summary{display:grid!important;grid-template-columns:1fr 1fr!important;width:100%!important;gap:7px!important}
+#dueSoonPanel .attention-count{font-size:10px!important;padding:8px 8px!important;border-radius:9px!important;text-align:center!important;background:#e9f8f0!important;color:#14835d!important}
+#dueSoonPanel .attention-count.late{background:#fff0ef!important;color:#c43e46!important}
+#dueSoonPanel #dueSoonRows.warning-stream{grid-column:2!important;grid-row:1!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important;align-items:stretch!important;margin:0!important}
+.warning-column{min-width:0;border:1px solid #e5edf5;border-radius:10px;padding:7px;background:#fbfcff}
+.warning-column-green{background:#f5fbf7;border-color:#dcefe4}
+.warning-column-red{background:#fff8f7;border-color:#f4dfdd}
+.warning-column-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;padding:1px 2px 7px;border-bottom:1px solid #e9eef4;font-size:10px;color:#60718b}
+.warning-column-green .warning-column-head{color:#16805d}.warning-column-red .warning-column-head{color:#c23f48}
+.warning-column-head span{font-weight:800;background:#fff;border:1px solid currentColor;border-radius:7px;padding:2px 6px}
+.warning-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;align-content:start}
+.warning-episode-card{min-width:0;width:100%;padding:7px 6px!important;border-radius:8px!important;border:1px solid #dcefe4!important;background:#eaf8f0!important;color:#18734f!important;box-shadow:none!important;font-size:10px!important;font-weight:800!important;letter-spacing:.01em!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;text-align:center!important}
+.warning-column-red .warning-episode-card{border-color:#f3d1ce!important;background:#fff0ef!important;color:#b93840!important}
+.warning-episode-card:hover{filter:brightness(.98)!important;transform:translateY(-1px)!important}
+.warning-column-empty{grid-column:1/-1;padding:13px 8px;text-align:center;color:#97a3b4;font-size:10px}
+#dueSoonPanel #dueSoonEmpty{display:none!important}
+.detailtable thead th.sortable-header,.pendingtable thead th.sortable-header{cursor:pointer;user-select:none;position:relative;padding-right:19px!important}
+.detailtable thead th.sortable-header:after,.pendingtable thead th.sortable-header:after{content:'↕';position:absolute;right:7px;color:#a0aec0;font-size:11px}
+.detailtable thead th.sortable-header.sort-active[aria-sort="ascending"]:after,.pendingtable thead th.sortable-header.sort-active[aria-sort="ascending"]:after{content:'↑';font-size:12px;color:#245fd2}
+.detailtable thead th.sortable-header.sort-active[aria-sort="descending"]:after,.pendingtable thead th.sortable-header.sort-active[aria-sort="descending"]:after{content:'↓';font-size:12px;color:#245fd2}
+.detailtable thead th.sortable-header:hover,.pendingtable thead th.sortable-header:hover{background:#edf3fc;color:#2455a5}
+@media(max-width:760px){#dueSoonPanel.attention-panel{grid-template-columns:1fr!important;row-gap:9px!important}#dueSoonPanel .warning-head{border-right:0!important;border-bottom:1px solid #e9eef6!important;padding:4px 2px 10px!important}#dueSoonPanel #dueSoonRows.warning-stream{grid-column:1!important;grid-row:2!important;grid-template-columns:1fr!important}.warning-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+
+
+<style id="compact-warning-and-column-search-v33">
+/* Warning panel stays compact; episode cards are arranged in more columns. */
+#dueSoonPanel.attention-panel{
+  height:auto!important;min-height:0!important;max-height:none!important;
+  align-items:start!important;grid-template-columns:minmax(165px,.42fr) minmax(0,1.58fr)!important;
+  padding:9px!important;column-gap:9px!important;
+}
+#dueSoonPanel .warning-head{
+  align-self:start!important;height:max-content!important;min-height:0!important;
+  justify-content:flex-start!important;padding:5px 7px!important;gap:10px!important;
+}
+#dueSoonPanel .attention-summary{align-self:start!important}
+#dueSoonPanel #dueSoonRows.warning-stream{
+  align-self:start!important;height:auto!important;min-height:0!important;
+  grid-template-columns:minmax(0,.48fr) minmax(0,1.52fr)!important;
+  align-items:start!important;gap:8px!important;
+}
+#dueSoonPanel .warning-column{
+  align-self:start!important;min-height:0!important;max-height:232px!important;
+  overflow:auto!important;padding:6px!important;border-radius:9px!important;
+}
+#dueSoonPanel .warning-column-head{position:sticky;top:0;z-index:2;background:#fbfcff;font-size:10px;margin-bottom:5px;padding-bottom:5px}
+#dueSoonPanel .warning-card-grid{
+  grid-template-columns:repeat(auto-fit,minmax(92px,1fr))!important;
+  gap:4px!important;align-content:start!important;
+}
+#dueSoonPanel .warning-column-red .warning-card-grid{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+#dueSoonPanel .warning-column-green .warning-column-head{background:#f5fbf7}
+#dueSoonPanel .warning-column-red .warning-column-head{background:#fff8f7}
+#dueSoonPanel .warning-episode-card{
+  height:27px!important;min-height:27px!important;padding:4px 5px!important;
+  font-size:9px!important;line-height:1.1!important;border-radius:7px!important;
+}
+#dueSoonPanel .warning-column-empty{padding:9px 5px!important;font-size:10px!important}
+/* Compact per-column search fields inside table headers. */
+.detailtable thead th,.pendingtable thead th,.batch-table thead th{
+  vertical-align:top!important;padding:7px 8px!important;white-space:normal!important;
+}
+.detailtable thead th .th-title,.pendingtable thead th .th-title,.batch-table thead th .th-title{
+  display:block;font-size:10px;line-height:1.2;min-height:13px;padding-right:13px;
+}
+.detailtable thead th .column-filter,.pendingtable thead th .column-filter,.batch-table thead th .column-filter{
+  display:block;width:100%;min-width:58px;height:23px;margin-top:5px;padding:3px 6px;
+  border:1px solid #dce4ef;border-radius:6px;background:#fff;color:#25334a;
+  font:10px/1.2 inherit;outline:none;box-sizing:border-box;text-transform:none;
+}
+.detailtable thead th .column-filter:focus,.pendingtable thead th .column-filter:focus,.batch-table thead th .column-filter:focus{
+  border-color:#7da5ed;box-shadow:0 0 0 2px rgba(35,89,213,.09)
+}
+.detailtable thead th.sortable-header:after,.pendingtable thead th.sortable-header:after{top:6px;right:6px;transform:none}
+@media(max-width:760px){
+ #dueSoonPanel.attention-panel{grid-template-columns:1fr!important;row-gap:7px!important}
+ #dueSoonPanel .warning-head{border-right:0!important;border-bottom:1px solid #e9eef6!important;padding:3px 3px 8px!important}
+ #dueSoonPanel #dueSoonRows.warning-stream{grid-column:1!important;grid-row:2!important;grid-template-columns:1fr!important}
+ #dueSoonPanel .warning-column{max-height:180px!important}
+ #dueSoonPanel .warning-column-red .warning-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:480px){
+ #dueSoonPanel .warning-column-red .warning-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .detailtable thead th .column-filter,.pendingtable thead th .column-filter,.batch-table thead th .column-filter{min-width:48px;font-size:9px}
+}
+</style>
+
 </head>
 <body>
 <div class="wrap">
@@ -215,7 +313,7 @@
     </section>
     <section id="dueSoonPanel" class="panel attention-panel" aria-label="Peringatan estimasi hasil" aria-live="polite">
       <div class="warning-head">
-        <div class="warning-title-wrap"><span class="warning-live-dot" aria-hidden="true"></span><div><h2>Peringatan hasil rujukan</h2><div id="dueSoonMeta" class="sub">Muncul otomatis 1 jam sebelum estimasi selesai</div></div></div>
+        <div class="warning-title-wrap"><span class="warning-live-dot" aria-hidden="true"></span><div><h2>Peringatan hasil</h2><div id="dueSoonMeta" class="sub" aria-hidden="true"></div></div></div>
         <div class="attention-summary"><span id="dueSoonCount" class="attention-count">0 mendekati</span><span id="overdueCount" class="attention-count late">0 lewat</span></div>
       </div>
       <div id="dueSoonRows" class="warning-stream"></div>
@@ -227,11 +325,12 @@
       <div class="tablewrap"><table class="pendingtable"><thead><tr><th>Tanggal FPPR</th><th>Pasien / Episode</th><th>Specimen No.</th><th>Nama tes</th><th>Estimasi selesai (WITA)</th><th>Staff</th><th>QV</th><th></th></tr></thead><tbody id="pendingRows"></tbody></table><div id="pendingEmpty" class="empty hidden">Semua tes sudah dicentang Staff dan QV.</div></div>
     </section>
     <div class="toolbar">
-      <input id="searchInput" type="search" placeholder="Cari nama, episode, atau parameter">
-      <input id="dateFilter" type="date" title="Filter berdasarkan tanggal FPPR">
+      <input id="searchInput" type="search" placeholder="Cari nama, episode, atau parameter" aria-label="Cari nama, episode, atau parameter">
+      <input id="dateFilter" type="date" title="Filter berdasarkan tanggal FPPR" aria-label="Filter tanggal FPPR">
+      <select id="destinationFilter" aria-label="Filter tujuan PRN"><option value="">Semua tujuan</option></select>
       <button id="clearFiltersBtn" class="btn-light" type="button">Reset</button>
     </div>
-    <div class="tablewrap"><table><thead><tr><th>Upload</th><th>Tanggal FPPR</th><th>Tujuan PRN</th><th>Tes</th><th>Belum selesai</th><th>Kirim (WITA)</th><th>Tiba PRN (WITA)</th><th>Tindakan</th></tr></thead><tbody id="batchRows"></tbody></table><div id="emptyState" class="empty">Belum ada data.</div></div>
+    <div class="tablewrap"><table class="batch-table"><thead><tr><th>Upload</th><th>Tanggal FPPR</th><th>Tujuan PRN</th><th>Tes</th><th>Belum selesai</th><th>Kirim (WITA)</th><th>Tiba PRN (WITA)</th><th>Tindakan</th></tr></thead><tbody id="batchRows"></tbody></table><div id="emptyState" class="empty">Belum ada data.</div></div>
     <section id="detailSection" class="hidden">
       <div class="detailhead"><div><h2 id="detailTitle">Rincian batch</h2><div id="detailMeta" class="detailmeta"></div><div id="sentState" class="detailmeta"></div></div><div class="top-actions"><button id="showAllTestsBtn" class="btn-light hidden" type="button">Tampilkan semua tes (termasuk selesai)</button><button id="editScheduleBtn" type="button">Atur jadwal kirim</button><button id="closeDetailBtn" class="btn-light" type="button">Tutup</button></div></div>
       <div class="tablewrap"><table class="detailtable"><thead><tr><th>Pasien / Episode</th><th>Specimen No.</th><th>Parameter</th><th>Estimasi selesai (WITA)</th><th>Staff</th><th>QV</th><th>Waktu selesai (WITA)</th></tr></thead><tbody id="detailRows"></tbody></table><div id="detailEmpty" class="empty hidden">Tidak ada pemeriksaan yang terbaca.</div></div>
@@ -277,6 +376,7 @@ const STORAGE_KEY='rujukanTrackerLocalPreviewV1';
 let batches=[],items=[],tatAliases={},selectedBatchId=null,pdfBusy=false,aliasTargetItemId=null;
 let applyingFirebaseRemote=false;
 let unfinishedView=false,pendingSortAsc=true,detailUnfinishedOnly=false,focusDetailItemId=null,reviewCellSeq=0;
+let pendingSortKey='estimate',detailSortKey='patient',detailSortAsc=true;
 
 const TAT_DAY_INDEX = {minggu:0, senin:1, selasa:2, rabu:3, kamis:4, jumat:5, sabtu:6};
 const TAT_DAY_LABELS = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
@@ -974,34 +1074,38 @@ function renderDueSoon(){
   const t=estimateSortTimestamp(it.estimatedFinishAt);
   return Number.isFinite(t)&&t<=greenEnd;
  }).sort((a,b)=>estimateSortTimestamp(a.estimatedFinishAt)-estimateSortTimestamp(b.estimatedFinishAt));
- const greenCount=watch.filter(it=>{const t=estimateSortTimestamp(it.estimatedFinishAt);return t>redEnd&&t<=greenEnd}).length;
- const redCount=watch.length-greenCount; // <= 1 jam, termasuk yang sudah terlewat
- $('dueSoonCount').textContent=greenCount+' · 2 jam';
- $('overdueCount').textContent=redCount+' · 1 jam / lewat';
- $('dueSoonMeta').textContent='WITA · hijau: 1–2 jam lagi · merah: ≤1 jam atau lewat · diperbarui otomatis';
+ const green=watch.filter(it=>{const t=estimateSortTimestamp(it.estimatedFinishAt);return t>redEnd&&t<=greenEnd});
+ const red=watch.filter(it=>estimateSortTimestamp(it.estimatedFinishAt)<=redEnd);
+ $('dueSoonCount').textContent=green.length+' mendekati';
+ $('overdueCount').textContent=red.length+' akan lewat / terlambat';
+ $('dueSoonMeta').textContent='';
  const container=$('dueSoonRows');container.innerHTML='';
- watch.forEach((it,index)=>{
-  const b=batches.find(x=>x.id===it.batchId)||{};const time=estimateSortTimestamp(it.estimatedFinishAt);const late=time<now;const urgent=time<=redEnd;
-  const card=document.createElement('article');card.className='warning-item '+(urgent?'is-urgent':'is-2h')+(late?' is-late':'');card.style.animationDelay=Math.min(index,8)*45+'ms';card.tabIndex=0;card.setAttribute('role','button');
-  card.setAttribute('aria-label',`${it.episode||'Episode tidak tercatat'} — ${it.parameter||'Tes tidak tercatat'}${late?', estimasi terlewat':urgent?', estimasi tinggal 1 jam atau kurang':', estimasi 1–2 jam lagi'}`);
-  // Kapsul ringkas: hanya nomor episode dan nama tes. Warna menunjukkan urgensi.
-  const copy=document.createElement('div');copy.className='warning-copy';
-  const episode=document.createElement('span');episode.className='warning-episode';
-  const ep=document.createElement('strong');ep.textContent=it.episode||'—';episode.appendChild(ep);
-  const test=document.createElement('span');test.className='warning-test';test.textContent=it.parameter||'Tes tidak tercatat';
-  copy.append(episode,test);card.appendChild(copy);
-  const open=()=>{
-   if(!b.id)return;
-   selectedBatchId=b.id;detailUnfinishedOnly=true;focusDetailItemId=it.id;
-   renderDetail();
-   $('detailSection').scrollIntoView({behavior:'smooth',block:'start'});
-   window.setTimeout(()=>focusDetailRow(it.id),140);
-  };
-  card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
-  container.appendChild(card);
- });
+ const makeColumn=(title,list,type)=>{
+  const col=document.createElement('section');col.className='warning-column '+(type==='green'?'warning-column-green':'warning-column-red');
+  const head=document.createElement('div');head.className='warning-column-head';
+  const label=document.createElement('strong');label.textContent=title;
+  const count=document.createElement('span');count.textContent=list.length;
+  head.append(label,count);col.appendChild(head);
+  const grid=document.createElement('div');grid.className='warning-card-grid';
+  list.forEach((it,index)=>{
+   const b=batches.find(x=>String(x.id)===String(it.batchId))||{};
+   const card=document.createElement('button');card.type='button';card.className='warning-episode-card';card.textContent=it.episode||'—';card.style.animationDelay=Math.min(index,8)*30+'ms';
+   card.title='Buka rincian episode '+(it.episode||'');
+   card.addEventListener('click',()=>{
+    if(!b.id)return;
+    selectedBatchId=b.id;detailUnfinishedOnly=true;focusDetailItemId=it.id;
+    renderDetail();$('detailSection').scrollIntoView({behavior:'smooth',block:'start'});
+    window.setTimeout(()=>focusDetailRow(it.id),140);
+   });
+   grid.appendChild(card);
+  });
+  if(!list.length){const empty=document.createElement('div');empty.className='warning-column-empty';empty.textContent='Tidak ada episode';grid.appendChild(empty)}
+  col.appendChild(grid);return col;
+ };
+ container.append(makeColumn('Mendekati selesai · 1–2 jam',green,'green'),makeColumn('Akan lewat / terlambat · ≤1 jam',red,'red'));
  show('dueSoonEmpty',watch.length===0);
 }
+
 function focusDetailRow(itemId){
  const rows=Array.from(document.querySelectorAll('#detailRows tr'));
  const row=rows.find(tr=>tr.dataset.itemId===String(itemId));
@@ -1055,10 +1159,13 @@ function renderAll(){
  $('statUnfinished').textContent=items.filter(i=>!isReviewComplete(i)).length;
  $('statCompleted').textContent=items.filter(isReviewComplete).length;
  $('statBatch').textContent=batches.length;
- const term=$('searchInput').value.trim().toLowerCase(),date=$('dateFilter').value;
- const filtered=batches.filter(b=>{if(date&&b.fpprDate!==date)return false;const its=batchItems(b.id);const hay=[b.destination,b.fpprDate,b.uploadDate,...(b.sourceFiles||[]).map(f=>f.fileName),...its.flatMap(i=>[i.patientName,i.episode,i.specimen,i.parameter])].join(' ').toLowerCase();return !term||hay.includes(term)}).sort((a,b)=>(a.fpprDate||'').localeCompare(b.fpprDate||'')||(a.session||'').localeCompare(b.session||'')||(a.createdAt||'').localeCompare(b.createdAt||''));
+ const term=$('searchInput').value.trim().toLowerCase(),date=$('dateFilter').value,destination=$('destinationFilter')?.value||'';
+ const destinationSelect=$('destinationFilter');
+ if(destinationSelect){const old=destinationSelect.value;const names=[...new Set(batches.map(b=>String(b.destination||'').trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'id'));destinationSelect.innerHTML='<option value="">Semua tujuan</option>';names.forEach(name=>{const opt=document.createElement('option');opt.value=name;opt.textContent=name.length>30?name.slice(0,28)+'…':name;opt.title=name;destinationSelect.appendChild(opt)});destinationSelect.value=names.includes(old)?old:'';}
+ const activeDestination=destinationSelect?.value||destination;
+ const filtered=batches.filter(b=>{if(date&&b.fpprDate!==date)return false;if(activeDestination&&String(b.destination||'').trim()!==activeDestination)return false;const its=batchItems(b.id);const hay=[b.destination,b.fpprDate,b.uploadDate,...(b.sourceFiles||[]).map(f=>f.fileName),...its.flatMap(i=>[i.patientName,i.episode,i.specimen,i.parameter])].join(' ').toLowerCase();return !term||hay.includes(term)}).sort((a,b)=>(a.fpprDate||'').localeCompare(b.fpprDate||'')||(a.session||'').localeCompare(b.session||'')||(a.createdAt||'').localeCompare(b.createdAt||''));
  const tbody=$('batchRows');tbody.innerHTML='';let lastDate=null;
- filtered.forEach(b=>{if((b.fpprDate||'—')!==lastDate){lastDate=b.fpprDate||'—';const group=document.createElement('tr');group.className='date-group-row';const td=document.createElement('td');td.colSpan=8;td.textContent='Tanggal FPPR: '+dateDisplay(lastDate);group.appendChild(td);tbody.appendChild(group)}const its=batchItems(b.id);const unfinished=its.filter(i=>!isReviewComplete(i)).length;const tr=document.createElement('tr');const cells=[dateDisplay(b.uploadDate),dateDisplay(b.fpprDate),b.destination||'—',String(its.length),String(unfinished),dtDisplay(b.sendAt),dtDisplay(b.arrivalEstimateAt)];cells.forEach((v,idx)=>{const td=document.createElement('td');td.textContent=v;if(idx===2){td.className='batchtitle';td.style.whiteSpace='pre-line';const count=document.createElement('small');count.className='batch-file-count';count.textContent=(b.sourceFiles?.length||b.fileCount||1)+' PDF · 1 batch';td.appendChild(count)}if(idx===4&&Number(v)>0){const pill=document.createElement('span');pill.className='pill p-alert';pill.textContent=v+' belum selesai';td.textContent='';td.appendChild(pill)}if(idx>=5)td.className='schedule-line';tr.appendChild(td)});const td=document.createElement('td');td.className='batch-action-cell';const actions=document.createElement('div');actions.className='batch-action-group';const btn=document.createElement('button');btn.type='button';btn.textContent='Buka';btn.addEventListener('click',()=>{selectedBatchId=b.id;detailUnfinishedOnly=true;renderDetail();$('detailSection').scrollIntoView({behavior:'smooth',block:'start'})});const delBtn=document.createElement('button');delBtn.type='button';delBtn.textContent='Kelola PDF';delBtn.className='delete-batch-btn';delBtn.title='Lihat atau hapus satu PDF dari batch tanggal ini';delBtn.setAttribute('aria-label','Kelola PDF tanggal '+(b.fpprDate||''));delBtn.addEventListener('click',()=>openBatchFileManager(b.id));actions.append(btn,delBtn);td.appendChild(actions);tr.appendChild(td);tbody.appendChild(tr)});show('emptyState',filtered.length===0);if(filtered.length===0)$('emptyState').textContent='Tidak ada data untuk tanggal/pencarian ini. Upload PDF FPPR untuk mulai.';if(selectedBatchId&&!batches.some(b=>b.id===selectedBatchId)){selectedBatchId=null;show('detailSection',false)}if(selectedBatchId)renderDetail();if(unfinishedView)renderUnfinishedList();renderDueSoon();}
+ filtered.forEach(b=>{if((b.fpprDate||'—')!==lastDate){lastDate=b.fpprDate||'—';const group=document.createElement('tr');group.className='date-group-row';const td=document.createElement('td');td.colSpan=8;td.textContent='Tanggal FPPR: '+dateDisplay(lastDate);group.appendChild(td);tbody.appendChild(group)}const its=batchItems(b.id);const unfinished=its.filter(i=>!isReviewComplete(i)).length;const tr=document.createElement('tr');const cells=[dateDisplay(b.uploadDate),dateDisplay(b.fpprDate),b.destination||'—',String(its.length),String(unfinished),dtDisplay(b.sendAt),dtDisplay(b.arrivalEstimateAt)];cells.forEach((v,idx)=>{const td=document.createElement('td');td.textContent=v;if(idx===2){td.className='batchtitle';td.style.whiteSpace='pre-line';const count=document.createElement('small');count.className='batch-file-count';count.textContent=(b.sourceFiles?.length||b.fileCount||1)+' PDF · 1 batch';td.appendChild(count)}if(idx===4&&Number(v)>0){const pill=document.createElement('span');pill.className='pill p-alert';pill.textContent=v+' belum selesai';td.textContent='';td.appendChild(pill)}if(idx>=5)td.className='schedule-line';tr.appendChild(td)});const td=document.createElement('td');td.className='batch-action-cell';const actions=document.createElement('div');actions.className='batch-action-group';const btn=document.createElement('button');btn.type='button';btn.textContent='Buka';btn.addEventListener('click',()=>{selectedBatchId=b.id;detailUnfinishedOnly=true;renderDetail();$('detailSection').scrollIntoView({behavior:'smooth',block:'start'})});const delBtn=document.createElement('button');delBtn.type='button';delBtn.textContent='Kelola PDF';delBtn.className='delete-batch-btn';delBtn.title='Lihat atau hapus satu PDF dari batch tanggal ini';delBtn.setAttribute('aria-label','Kelola PDF tanggal '+(b.fpprDate||''));delBtn.addEventListener('click',()=>openBatchFileManager(b.id));actions.append(btn,delBtn);td.appendChild(actions);tr.appendChild(td);tbody.appendChild(tr)});show('emptyState',filtered.length===0);if(filtered.length===0)$('emptyState').textContent='Tidak ada data untuk tanggal/pencarian ini. Upload PDF FPPR untuk mulai.';applyColumnFilters('.batch-table');if(selectedBatchId&&!batches.some(b=>b.id===selectedBatchId)){selectedBatchId=null;show('detailSection',false)}if(selectedBatchId)renderDetail();if(unfinishedView)renderUnfinishedList();renderDueSoon();}
 function estimateSortTimestamp(value){const s=String(value||'').trim();if(!s||/^Perlu /i.test(s))return Number.POSITIVE_INFINITY;const months={jan:0,feb:1,mar:2,apr:3,mei:4,jun:5,jul:6,agu:7,sep:8,okt:9,nov:10,des:11};let m=s.match(/^(\d{1,2})\s+(Jan|Feb|Mar|Apr|Mei|Jun|Jul|Agu|Sep|Okt|Nov|Des)\s+(\d{4})(?:\s*,?\s*(\d{1,2})[.:](\d{2}))?/i);if(m)return Date.UTC(Number(m[3]),months[m[2].toLowerCase()],Number(m[1]),Number(m[4]||0)-8,Number(m[5]||0));m=s.match(/^(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2}))?/);if(m)return Date.UTC(Number(m[1]),Number(m[2])-1,Number(m[3]),Number(m[4]||0)-8,Number(m[5]||0));m=s.match(/^(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})(?:\s*,?\s*(\d{1,2})[:.](\d{2}))?/);if(m)return Date.UTC(Number(m[3]),Number(m[2])-1,Number(m[1]),Number(m[4]||0)-8,Number(m[5]||0));return Number.POSITIVE_INFINITY}
 function reviewCheckValue(it, role){
  const key=role==='staff'?'staffChecked':'qvChecked';
@@ -1120,11 +1227,20 @@ function createReviewCheckCell(it, role, labelText){
 }
 function renderUnfinishedList(){
  const pending=items.filter(it=>!isReviewComplete(it)).slice().sort((a,b)=>{
-  const at=estimateSortTimestamp(a.estimatedFinishAt),bt=estimateSortTimestamp(b.estimatedFinishAt);
-  if(Number.isFinite(at)!==Number.isFinite(bt))return Number.isFinite(at)?-1:1;
-  if(Number.isFinite(at)&&at!==bt)return pendingSortAsc?at-bt:bt-at;
   const ba=batches.find(x=>x.id===a.batchId)||{},bb=batches.find(x=>x.id===b.batchId)||{};
-  return (ba.fpprDate||a.fpprDate||ba.uploadDate||'').localeCompare(bb.fpprDate||b.fpprDate||bb.uploadDate||'')||(a.patientName||'').localeCompare(b.patientName||'')||(a.specimen||'').localeCompare(b.specimen||'');
+  let av,bv;
+  switch(pendingSortKey){
+   case 'fppr': av=ba.fpprDate||a.fpprDate||ba.uploadDate||'';bv=bb.fpprDate||b.fpprDate||bb.uploadDate||'';break;
+   case 'specimen': av=a.specimen||'';bv=b.specimen||'';break;
+   case 'parameter': av=a.parameter||'';bv=b.parameter||'';break;
+   case 'staff': av=reviewCheckValue(a,'staff')?1:0;bv=reviewCheckValue(b,'staff')?1:0;break;
+   case 'qv': av=reviewCheckValue(a,'qv')?1:0;bv=reviewCheckValue(b,'qv')?1:0;break;
+   case 'patient': av=(a.patientName||'')+' '+(a.episode||'');bv=(b.patientName||'')+' '+(b.episode||'');break;
+   default: av=estimateSortTimestamp(a.estimatedFinishAt);bv=estimateSortTimestamp(b.estimatedFinishAt);
+  }
+  let cmp=(typeof av==='number'&&typeof bv==='number')?av-bv:String(av).localeCompare(String(bv),'id',{numeric:true,sensitivity:'base'});
+  if(!cmp)cmp=(a.patientName||'').localeCompare(b.patientName||'');
+  return pendingSortAsc?cmp:-cmp;
  });
  const tbody=$('pendingRows');tbody.innerHTML='';
  $('pendingCount').textContent=pending.length+' tes · estimasi '+(pendingSortAsc?'terlama ke terbaru':'terbaru ke terlama');
@@ -1132,7 +1248,7 @@ function renderUnfinishedList(){
  pending.forEach(it=>{
   const b=batches.find(x=>x.id===it.batchId)||{};const tr=document.createElement('tr');
   const fppr=document.createElement('td');fppr.textContent=dateDisplay(it.fpprDate||b.fpprDate);tr.appendChild(fppr);
-  const patient=document.createElement('td');const pname=document.createElement('div');pname.className='batchtitle';pname.textContent=it.patientName||'—';const ep=document.createElement('button');ep.type='button';ep.className='copycode';ep.textContent=it.episode||'—';ep.title='Klik untuk menyalin Episode No.';ep.addEventListener('click',()=>copyValue(it.episode,'Episode No.'));patient.append(pname,ep);tr.appendChild(patient);
+  const patient=document.createElement('td');const pname=document.createElement('div');pname.className='batchtitle';pname.textContent=displayPatientName(it.patientName);const ep=document.createElement('button');ep.type='button';ep.className='copycode';ep.textContent=it.episode||'—';ep.title='Klik untuk menyalin Episode No.';ep.addEventListener('click',()=>copyValue(it.episode,'Episode No.'));patient.append(pname,ep);tr.appendChild(patient);
   const spec=document.createElement('td');const sb=document.createElement('button');sb.type='button';sb.className='copycode';sb.textContent=it.specimen||'—';sb.title='Klik untuk menyalin Specimen No.';sb.addEventListener('click',()=>copyValue(it.specimen,'Specimen No.'));spec.appendChild(sb);tr.appendChild(spec);
   const par=document.createElement('td');par.textContent=it.parameter||'—';tr.appendChild(par);
   const est=document.createElement('td');est.className='pending-estimate';const estimate=String(it.estimatedFinishAt||'').trim();est.textContent=!estimate?'Belum ada estimasi':estimate;if(!estimate)est.classList.add('none');if(/^Perlu konfirmasi|^Perlu isi estimasi/i.test(estimate))est.classList.add('warn');tr.appendChild(est);
@@ -1141,10 +1257,10 @@ function renderUnfinishedList(){
   const action=document.createElement('td');const open=document.createElement('button');open.textContent='Buka';open.style.padding='7px 11px';open.addEventListener('click',()=>{selectedBatchId=b.id;detailUnfinishedOnly=true;renderDetail();$('detailSection').scrollIntoView({behavior:'smooth',block:'start'})});action.appendChild(open);tr.appendChild(action);
   tbody.appendChild(tr);
  });
- show('pendingEmpty',pending.length===0);show('pendingRows',pending.length>0);
+ show('pendingEmpty',pending.length===0);show('pendingRows',pending.length>0);applyColumnFilters('.pendingtable');
 }
 function setUnfinishedView(on){unfinishedView=!!on;const card=$('unfinishedCard');card.classList.toggle('active',unfinishedView);card.setAttribute('aria-pressed',String(unfinishedView));show('unfinishedPanel',unfinishedView);if(unfinishedView){renderUnfinishedList();$('unfinishedPanel').scrollIntoView({behavior:'smooth',block:'start'})}}
-$('unfinishedCard').addEventListener('click',()=>setUnfinishedView(!unfinishedView));$('unfinishedCard').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setUnfinishedView(!unfinishedView)}});$('pendingSortBtn').addEventListener('click',()=>{pendingSortAsc=!pendingSortAsc;renderUnfinishedList()});$('closePendingBtn').addEventListener('click',()=>setUnfinishedView(false));
+$('unfinishedCard').addEventListener('click',()=>setUnfinishedView(!unfinishedView));$('unfinishedCard').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setUnfinishedView(!unfinishedView)}});$('pendingSortBtn').addEventListener('click',()=>{pendingSortKey='estimate';pendingSortAsc=!pendingSortAsc;renderUnfinishedList()});$('closePendingBtn').addEventListener('click',()=>setUnfinishedView(false));
 function aliasSearchRender(){
  const q=tatCleanName($('aliasSearchInput').value||'');const box=$('aliasResults');box.innerHTML='';
  if(!q){const e=document.createElement('div');e.className='alias-empty';e.textContent='Ketik nama tes resmi untuk mencari acuan TAT.';box.appendChild(e);return}
@@ -1191,10 +1307,24 @@ $('aliasSearchInput').addEventListener('input',aliasSearchRender);$('cancelAlias
 
 function copyValue(value,label){if(!value||value==='—'){toast(label+' tidak tersedia.',true);return}const done=()=>toast(label+' disalin.');if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(value).then(done).catch(()=>fallbackCopy(value,done))}else fallbackCopy(value,done)}
 function fallbackCopy(value,done){const ta=document.createElement('textarea');ta.value=value;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{const ok=document.execCommand('copy');if(ok)done();else toast('Tidak dapat menyalin otomatis. Pilih dan salin teksnya.',true)}catch{toast('Tidak dapat menyalin otomatis. Pilih dan salin teksnya.',true)}ta.remove()}
+function displayPatientName(value){
+ let name=String(value||'').replace(/\s+/g,' ').trim();
+ if(!name)return '—';
+ // Hapus sapaan/gelar di depan nama pasien untuk tampilan saja; data asli tetap utuh.
+ // Termasuk Sdr/Sdri, Ibu, Bpk/Bapak, An/Anak, serta gelar profesi yang sudah ditangani.
+ const prefix=/^(?:(?:sdr\.?|sdri\.?|ibu|bpk\.?|bapak|an\.?|anak|ny\.?|tn\.?|nona|nn\.?|(?:prof(?:esor)?\.?\s+)?(?:dr\.?|drg\.?|ir\.?|apt\.?|ns\.?|n\.?s\.?|s\.?kep\.?|s\.?km\.?|s\.?kom\.?|s\.?si\.?|s\.?pd\.?|s\.?t\.?|s\.?e\.?|s\.?h\.?))\s+)/i;
+ let previous='';
+ while(name!==previous){previous=name;name=name.replace(prefix,'').trim()}
+ // Gelar setelah koma, misalnya ', dr., Sp.PD, M.Kes' atau ', S.Kom'.
+ let oldName='';
+ const suffix=/\s*,\s*(?:(?:drg?|prof|ir|apt|ns)\.?|(?:sp\.\s*[A-Za-z.\-]+)|(?:s\.?\s*(?:ked|km|kom|si|pd|t|e|h|kep|farm|psi))\.?|(?:m\.?\s*(?:kes|kom|si|pd|m|h|sc))\.?|(?:ph\.?d)|(?:mba)|(?:c[.]?ns))\s*$/i;
+ while(name!==oldName){oldName=name;name=name.replace(suffix,'').trim()}
+ return name||'—';
+}
 function compactEstimateLabel(it){const value=String(it.estimatedFinishAt||'');if(it.estimateSource==='manual')return 'Manual';if(!value||/^Perlu isi estimasi tiba PRN/i.test(value))return 'Isi tiba PRN';if(/^Perlu konfirmasi/i.test(value))return 'Perlu konfirmasi';if(it.tatMatchName==='Napza Kuantitatif Urine & Serum')return 'Otomatis · External Rev.14';return it.estimateSource==='auto'?'Otomatis':'Estimasi';}
 function renderDetail(){const b=batches.find(x=>x.id===selectedBatchId);if(!b){show('detailSection',false);return}show('detailSection',true);const allInBatch=batchItems(b.id);$('detailTitle').textContent='Rincian pemeriksaan';$('detailMeta').textContent=`FPPR ${dateDisplay(b.fpprDate)} · Upload ${dateDisplay(b.uploadDate)} · ${(b.sourceFiles?.length||b.fileCount||1)} PDF digabung · ${b.destination||'—'} · ${detailUnfinishedOnly?allInBatch.filter(i=>!isReviewComplete(i)).length+' belum selesai':allInBatch.length+' tes'}`;$('sentState').textContent=`Jadwal kirim: ${dtDisplay(b.sendAt)} · Estimasi tiba PRN: ${dtDisplay(b.arrivalEstimateAt)}`;show('showAllTestsBtn',detailUnfinishedOnly);
- const list=allInBatch.filter(it=>!detailUnfinishedOnly||!isReviewComplete(it)).sort((a,b)=>{if(detailUnfinishedOnly){const at=estimateSortTimestamp(a.estimatedFinishAt),bt=estimateSortTimestamp(b.estimatedFinishAt);if(Number.isFinite(at)!==Number.isFinite(bt))return Number.isFinite(at)?-1:1;if(Number.isFinite(at)&&at!==bt)return at-bt}return (a.patientName||'').localeCompare(b.patientName||'')||(a.specimen||'').localeCompare(b.specimen||'')});const tb=$('detailRows');tb.innerHTML='';list.forEach(it=>{const tr=document.createElement('tr');tr.dataset.itemId=String(it.id||'');if(focusDetailItemId&&String(it.id)===String(focusDetailItemId))tr.classList.add('focus-patient-row');
- const name=document.createElement('td');const nm=document.createElement('div');nm.className='batchtitle';nm.textContent=it.patientName||'—';const epWrap=document.createElement('div');const ep=document.createElement('button');ep.type='button';ep.className='copycode';ep.textContent=it.episode||'—';ep.title='Klik untuk menyalin Episode No.';ep.addEventListener('click',()=>copyValue(it.episode,'Episode No.'));epWrap.append(ep);name.append(nm,epWrap);tr.appendChild(name);
+ const list=allInBatch.filter(it=>!detailUnfinishedOnly||!isReviewComplete(it)).slice().sort((a,b)=>{let av,bv;switch(detailSortKey){case 'specimen':av=a.specimen||'';bv=b.specimen||'';break;case 'parameter':av=a.parameter||'';bv=b.parameter||'';break;case 'estimate':av=estimateSortTimestamp(a.estimatedFinishAt);bv=estimateSortTimestamp(b.estimatedFinishAt);break;case 'staff':av=reviewCheckValue(a,'staff')?1:0;bv=reviewCheckValue(b,'staff')?1:0;break;case 'qv':av=reviewCheckValue(a,'qv')?1:0;bv=reviewCheckValue(b,'qv')?1:0;break;case 'completed':av=Date.parse(a.completedAt||'')||0;bv=Date.parse(b.completedAt||'')||0;break;default:av=(a.patientName||'')+' '+(a.episode||'');bv=(b.patientName||'')+' '+(b.episode||'');}if(typeof av==='number'&&!Number.isFinite(av))av=Number.POSITIVE_INFINITY;if(typeof bv==='number'&&!Number.isFinite(bv))bv=Number.POSITIVE_INFINITY;let cmp=(typeof av==='number'&&typeof bv==='number')?av-bv:String(av).localeCompare(String(bv),'id',{numeric:true,sensitivity:'base'});if(!cmp)cmp=(a.patientName||'').localeCompare(b.patientName||'');return detailSortAsc?cmp:-cmp;});const tb=$('detailRows');tb.innerHTML='';list.forEach(it=>{const tr=document.createElement('tr');tr.dataset.itemId=String(it.id||'');if(focusDetailItemId&&String(it.id)===String(focusDetailItemId))tr.classList.add('focus-patient-row');
+ const name=document.createElement('td');const nm=document.createElement('div');nm.className='batchtitle';nm.textContent=displayPatientName(it.patientName);const epWrap=document.createElement('div');const ep=document.createElement('button');ep.type='button';ep.className='copycode';ep.textContent=it.episode||'—';ep.title='Klik untuk menyalin Episode No.';ep.addEventListener('click',()=>copyValue(it.episode,'Episode No.'));epWrap.append(ep);name.append(nm,epWrap);tr.appendChild(name);
  const spec=document.createElement('td');const specBtn=document.createElement('button');specBtn.type='button';specBtn.className='copycode';specBtn.textContent=it.specimen||'—';specBtn.title='Klik untuk menyalin Specimen No.';specBtn.addEventListener('click',()=>copyValue(it.specimen,'Specimen No.'));spec.append(specBtn);tr.appendChild(spec);
  const par=document.createElement('td');par.textContent=it.parameter||'—';tr.appendChild(par);
  const estimateTd=document.createElement('td');const estimate=document.createElement('input');estimate.type='text';estimate.className='estimate-input';estimate.placeholder=b.arrivalEstimateAt?'Perlu konfirmasi':'Isi estimasi';estimate.value=it.estimatedFinishAt||'';estimate.setAttribute('aria-label','Estimasi hasil '+(it.parameter||''));estimate.title=it.estimateNote||'Estimasi otomatis; bisa diedit.';const estimateHint=document.createElement('div');estimateHint.className='estimate-hint'+((it.estimatedFinishAt||'').startsWith('Perlu konfirmasi')?' warn':'');estimateHint.textContent=compactEstimateLabel(it);estimate.addEventListener('change',()=>{const value=estimate.value.trim();if(value){it.estimatedFinishAt=value;it.estimateSource='manual';it.estimateNote='Diisi manual';it.tatMatchName='';}else{it.estimatedFinishAt='';it.estimateSource='';const batch=batches.find(x=>x.id===it.batchId);if(batch){calculateBatchAutoEstimates(batch);const fresh=items.find(x=>x.id===it.id);if(fresh){estimate.value=fresh.estimatedFinishAt||'';estimateHint.textContent=compactEstimateLabel(fresh);estimate.title=fresh.estimateNote||'';}}}it.updatedAt=nowIso();it.updatedBy='Lokal';saveLocal();estimateHint.textContent=compactEstimateLabel(it);estimateHint.className='estimate-hint'+((it.estimatedFinishAt||'').startsWith('Perlu konfirmasi')?' warn':'');estimate.title=it.estimateNote||'Estimasi TAT otomatis';renderAll();toast(it.estimateSource==='manual'?'Estimasi manual disimpan.':'Estimasi otomatis diperbarui.');});estimate.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();estimate.blur()}});estimateTd.append(estimate,estimateHint);
@@ -1203,14 +1333,69 @@ function renderDetail(){const b=batches.find(x=>x.id===selectedBatchId);if(!b){s
  tr.appendChild(estimateTd);
  tr.appendChild(createReviewCheckCell(it,'staff','Staff'));
  tr.appendChild(createReviewCheckCell(it,'qv','QV'));
- const time=document.createElement('td');time.className='timelines';time.textContent=dtDisplay(it.completedAt);tr.appendChild(time);tb.appendChild(tr)});show('detailEmpty',list.length===0);$('detailEmpty').textContent=detailUnfinishedOnly?'Tidak ada tes belum selesai di batch ini.':'Tidak ada pemeriksaan yang terbaca.'}
+ const time=document.createElement('td');time.className='timelines';time.textContent=dtDisplay(it.completedAt);tr.appendChild(time);tb.appendChild(tr)});show('detailEmpty',list.length===0);$('detailEmpty').textContent=detailUnfinishedOnly?'Tidak ada tes belum selesai di batch ini.':'Tidak ada pemeriksaan yang terbaca.';applyColumnFilters('.detailtable')}
+
+function enableSortableHeaders(tableSelector,keys,onSort){
+ const table=document.querySelector(tableSelector);if(!table)return;
+ const headers=Array.from(table.querySelectorAll('thead th'));
+ keys.forEach((key,index)=>{
+  const th=headers[index];if(!th||!key)return;
+  th.classList.add('sortable-header');th.setAttribute('role','button');th.tabIndex=0;th.title='Klik untuk mengurutkan';
+  const activate=()=>{const direction=onSort(key);headers.forEach(h=>{h.removeAttribute('aria-sort');h.classList.remove('sort-active')});th.classList.add('sort-active');th.setAttribute('aria-sort',direction||'ascending');};
+  th.addEventListener('click',activate);th.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate()}});
+ });
+}
+enableSortableHeaders('.detailtable',['patient','specimen','parameter','estimate','staff','qv','completed'],key=>{if(detailSortKey===key)detailSortAsc=!detailSortAsc;else{detailSortKey=key;detailSortAsc=true;}renderDetail();return detailSortAsc?'ascending':'descending';});
+// Header sorting for the compact "Belum selesai" panel.
+enableSortableHeaders('.pendingtable',['fppr','patient','specimen','parameter','estimate','staff','qv',null],key=>{if(pendingSortKey===key)pendingSortAsc=!pendingSortAsc;else{pendingSortKey=key;pendingSortAsc=true;}renderUnfinishedList();return pendingSortAsc?'ascending':'descending';});
+
+function columnCellText(td){
+ let value=(td?.innerText||td?.textContent||'');
+ if(!td)return value.toLowerCase();
+ td.querySelectorAll('input').forEach(input=>{
+  if(input.type==='checkbox')value+=' '+(input.checked?'selesai':'belum');
+  else value+=' '+(input.value||'');
+ });
+ return value.toLocaleLowerCase('id');
+}
+function applyColumnFilters(table){
+ if(typeof table==='string')table=document.querySelector(table);
+ if(!table||!table.tBodies.length)return;
+ const headers=Array.from(table.tHead?.rows?.[0]?.cells||[]);
+ const filters=headers.map((th,index)=>({index,value:(th.querySelector('.column-filter')?.value||'').trim().toLocaleLowerCase('id')})).filter(x=>x.value);
+ let currentGroup=null;
+ Array.from(table.tBodies[0].rows).forEach(row=>{
+  if(row.classList.contains('date-group-row')){currentGroup=row;row.hidden=true;return;}
+  const match=filters.every(filter=>columnCellText(row.cells[filter.index]).includes(filter.value));
+  row.hidden=!match;
+  if(match&&currentGroup)currentGroup.hidden=false;
+ });
+}
+function setupColumnSearch(tableSelector){
+ const table=document.querySelector(tableSelector);if(!table||!table.tHead)return;
+ Array.from(table.tHead.rows[0].cells).forEach((th,index)=>{
+  const label=(th.textContent||'').trim();
+  if(!label||th.querySelector('.column-filter'))return;
+  const title=document.createElement('span');title.className='th-title';title.textContent=label;
+  const input=document.createElement('input');input.type='search';input.className='column-filter';
+  input.placeholder='Cari...';input.setAttribute('aria-label','Cari kolom '+label);input.autocomplete='off';
+  input.addEventListener('click',e=>e.stopPropagation());
+  input.addEventListener('keydown',e=>e.stopPropagation());
+  input.addEventListener('input',()=>applyColumnFilters(table));
+  th.replaceChildren(title,input);
+ });
+}
+setupColumnSearch('.detailtable');
+setupColumnSearch('.pendingtable');
+setupColumnSearch('.wrap > main > .tablewrap > table');
+
 $('showAllTestsBtn').addEventListener('click',()=>{detailUnfinishedOnly=false;renderDetail()});
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function openScheduleModal(batchId,afterUpload=false){const b=batches.find(x=>x.id===batchId);if(!b)return;selectedBatchId=batchId;$('sendAtInput').value=toDateTimeLocal(b.sendAt);$('arrivalAtInput').value=toDateTimeLocal(b.arrivalEstimateAt);const pdfCount=(b.sourceFiles?.length||b.fileCount||1);$('scheduleSubtitle').textContent=(afterUpload?'Isi jadwal satu kali untuk ':'Perbarui jadwal bersama untuk ')+pdfCount+' PDF dalam batch FPPR '+dateDisplay(b.fpprDate)+'. Semua tes pada batch ini memakai waktu kirim dan tiba yang sama (WITA).';show('scheduleModal',true)}
 function closeScheduleModal(){show('scheduleModal',false)}
 $('saveScheduleBtn').addEventListener('click',()=>{const b=batches.find(x=>x.id===selectedBatchId);if(!b)return;const send=$('sendAtInput').value,arrival=$('arrivalAtInput').value;if(!arrival){toast('Isi tanggal dan jam tiba PRN agar estimasi bisa dihitung.',true);return}b.sendAt=send?witaInputToIso(send):null;b.arrivalEstimateAt=witaInputToIso(arrival);b.scheduleUpdatedAt=nowIso();b.updatedAt=b.scheduleUpdatedAt;calculateBatchAutoEstimates(b);saveLocal();closeScheduleModal();renderAll();renderDetail();toast('Jadwal disimpan. Estimasi TAT diperbarui otomatis.')});
 $('skipScheduleBtn').addEventListener('click',()=>{closeScheduleModal();renderAll();renderDetail()});
-$('searchInput').addEventListener('input',renderAll);$('dateFilter').addEventListener('change',renderAll);$('clearFiltersBtn').addEventListener('click',()=>{$('searchInput').value='';$('dateFilter').value='';renderAll()});$('closeDetailBtn').addEventListener('click',()=>{selectedBatchId=null;detailUnfinishedOnly=false;focusDetailItemId=null;show('detailSection',false)});$('editScheduleBtn').addEventListener('click',()=>openScheduleModal(selectedBatchId,false));
+$('searchInput').addEventListener('input',renderAll);$('dateFilter').addEventListener('change',renderAll);$('destinationFilter').addEventListener('change',renderAll);$('clearFiltersBtn').addEventListener('click',()=>{$('searchInput').value='';$('dateFilter').value='';$('destinationFilter').value='';renderAll()});$('closeDetailBtn').addEventListener('click',()=>{selectedBatchId=null;detailUnfinishedOnly=false;focusDetailItemId=null;show('detailSection',false)});$('editScheduleBtn').addEventListener('click',()=>openScheduleModal(selectedBatchId,false));
 $('backupBtn').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({batches,items,tatAliases,exportedAt:nowIso()},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='backup-rujukan-'+today()+'.json';a.click();URL.revokeObjectURL(url);toast('Backup berhasil dibuat.');});
 $('restoreBtn').addEventListener('click',()=>$('restoreInput').click());
 $('restoreInput').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{const d=JSON.parse(await file.text());if(!Array.isArray(d.batches)||!Array.isArray(d.items))throw new Error('Format backup tidak sesuai.');if(!confirm(`Pulihkan ${d.batches.length} batch dan ${d.items.length} pemeriksaan? Data lokal saat ini akan diganti.`))return;batches=d.batches;items=d.items;tatAliases=d.tatAliases&&typeof d.tatAliases==='object'&&!Array.isArray(d.tatAliases)?d.tatAliases:{};items.forEach(it=>{if(it.estimatedFinishAt&&!it.estimateSource)it.estimateSource='manual';if(!it.estimateSource)it.estimateSource=''});saveLocal();selectedBatchId=null;detailUnfinishedOnly=false;show('detailSection',false);renderAll();toast('Backup berhasil dipulihkan.')}catch(err){toast(err.message||'File backup tidak valid.',true)}finally{$('restoreInput').value=''}});
